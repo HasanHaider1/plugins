@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/footer.html.twig' %}
+
+{% block layout_footer_navigation_hotline_headline %}
+    <h2>Asset:</h2>
+
+    {# Using asset function to display our custom asset #}
+    <img src="{{ asset('bundles/myimages/010-trello.png', 'asset') }}" style="height: 100px; width: 100px">
+    {{ parent() }}
+{% endblock %}
