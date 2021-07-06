@@ -28,6 +28,7 @@ class MySubscriber implements EventSubscriberInterface
     {
         // Do something
         // E.g. work with the loaded entities: $event->getEntities()
+        $something = $this->SystemConfig->get('Hello');
         $configPlugintext = $this->SystemConfig->get('MySlogans.config.slogantext1');
         $configPlugintextfont = $this->SystemConfig->get('MySlogans.config.sloganfont1');
         $configPlugintextcolor = $this->SystemConfig->get('MySlogans.config.slogancolor1');
