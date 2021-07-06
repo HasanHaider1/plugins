@@ -10,9 +10,9 @@ use Shopware\Core\System\SystemConfig\SystemConfigService;
 class MySubscriber implements EventSubscriberInterface
 {
     protected $SystemConfig;
-    public function __construct(SystemConfigService $systemConfigService)
+    public function __construct(SystemConfigService $SystemConfig)
     {
-        $this->SystemConfig = $systemConfigService;
+        $this->SystemConfig = $SystemConfig;
     }
 
 
