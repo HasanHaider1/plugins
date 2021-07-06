@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_navigation_hotline_headline  %}
+    <h6>Asset:</h6>
+    {# Using asset function to display our custom asset #}
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{{ asset('bundles/myimages/010-trello.png', 'asset') }}" style="height: 25px; width: 25px">
+        </div>
+        <div class="col-md-2">
+            {{ context.context.extensions.testContextExtension['key1'] }}
+          </div>
+        <div class="col-md-2">
+            <img src="{{ asset('bundles/myimages/010-trello.png', 'asset') }}" style="height: 25px; width: 25px">
+        </div>
+        <div class="col-md-2">
+            <img src="{{ asset('bundles/myimages/010-trello.png', 'asset') }}" style="height: 25px; width: 25px">
+        </div>
+        <div class="col-md-2">
+            <img src="{{ asset('bundles/myimages/010-trello.png', 'asset') }}" style="height: 25px; width: 25px">
+        </div>
+    </div>
+    {{ dump( context.context.extensions.testContextExtension['key1'] ) }}
+{% endblock %}
