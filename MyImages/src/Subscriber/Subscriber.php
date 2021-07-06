@@ -16,6 +16,7 @@ class MySubscriber implements EventSubscriberInterface
     public function random_pic($dir = 'public/bundles/myimages')
     {
         // Initiate array which will contain the image name
+
         $imgs_arr = array();
 
         // Check if image directory exists
@@ -56,8 +57,6 @@ class MySubscriber implements EventSubscriberInterface
     {
         // Do something
         // E.g. work with the loaded entities: $event->getEntities()
-        $a = random_pic();
-        print $a;
         $array = ['key1' => random_pic(),'key2' => random_pic(),'key3' => random_pic(),'key4' => random_pic(),'key5' => random_pic()];
         //assign the array to the page
         $event->getPage()->assign($array);
