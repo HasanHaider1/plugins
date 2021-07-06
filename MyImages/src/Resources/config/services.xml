@@ -5,6 +5,8 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-
+        <service id="MyImages\Subscriber\MySubscriber">
+            <tag name="kernel.event_subscriber"/>
+        </service>
     </services>
 </container>

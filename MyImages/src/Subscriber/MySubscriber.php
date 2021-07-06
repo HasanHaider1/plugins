@@ -4,19 +4,27 @@ namespace MyImages\Subscriber;
 
 use Shopware\Storefront\Page\GenericPageLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
+use Shopware\Core\Framework\Struct\ArrayEntity;
 
 class MySubscriber implements EventSubscriberInterface
 {
-    public function __construct(SystemConfigService $systemConfigService)
+    public function __construct()
     {
 
     }
 
-    public function random_pic($dir = 'public/bundles/myimages')
+
+   public static function getSubscribedEvents(): array
+    {
+        // Return the events to listen to as array like this:  <event to listen to> => <method to execute>
+        return [
+            GenericPageLoadedEvent::class => 'onPageLoaded'
+        ];
+    }
+    public function random_pic($dir = 'bundles/myimages')
     {
         // Initiate array which will contain the image name
-
+        //echo "Hellooooooo";
         $imgs_arr = array();
 
         // Check if image directory exists
@@ -42,22 +50,19 @@ class MySubscriber implements EventSubscriberInterface
             return $random_img;
         }
         else {
-            echo "Directory not found";
+            print "Directory not found";
         }
     }
-   public static function getSubscribedEvents(): array
-    {
-        // Return the events to listen to as array like this:  <event to listen to> => <method to execute>
-        return [
-            GenericPageLoadedEvent::class => 'onPageLoaded'
-        ];
-    }
-
     public function onPageLoaded(GenericPageLoadedEvent $event)
     {
         // Do something
         // E.g. work with the loaded entities: $event->getEntities()
-        $array = ['key1' => random_pic(),'key2' => random_pic(),'key3' => random_pic(),'key4' => random_pic(),'key5' => random_pic()];
+        $a = $this->random_pic();
+        $b = $this->random_pic();
+        $c = $this->random_pic();
+        $d = $this->random_pic();
+        $e = $this->random_pic();
+        $array = ['key1' => $a,'key2' => $b,'key3' => $c,'key4' => $d,'key5' => $e];
         //assign the array to the page
         $event->getPage()->assign($array);
 

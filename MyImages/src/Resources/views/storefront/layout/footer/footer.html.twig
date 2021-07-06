@@ -5,20 +5,20 @@
     {# Using asset function to display our custom asset #}
     <div class="row">
         <div class="col-md-2">
-            <img src="{{ asset('bundles/myimages/010-trello.png', 'asset') }}" style="height: 25px; width: 25px">
+            <img src="bundles/myimages/{{ context.context.extensions.testContextExtension['key1'] }}" style="height: 25px; width: 25px">
         </div>
         <div class="col-md-2">
-            {{ context.context.extensions.testContextExtension['key1'] }}
-          </div>
+            <img src="bundles/myimages/{{ context.context.extensions.testContextExtension['key2'] }}" style="height: 25px; width: 25px">
+           </div>
         <div class="col-md-2">
-            <img src="{{ asset('bundles/myimages/010-trello.png', 'asset') }}" style="height: 25px; width: 25px">
+            <img src="bundles/myimages/{{ context.context.extensions.testContextExtension['key3'] }}" style="height: 25px; width: 25px">
         </div>
         <div class="col-md-2">
-            <img src="{{ asset('bundles/myimages/010-trello.png', 'asset') }}" style="height: 25px; width: 25px">
+            <img src="bundles/myimages/{{ context.context.extensions.testContextExtension['key4'] }}" style="height: 25px; width: 25px">
         </div>
         <div class="col-md-2">
-            <img src="{{ asset('bundles/myimages/010-trello.png', 'asset') }}" style="height: 25px; width: 25px">
+            <img src="bundles/myimages/{{ context.context.extensions.testContextExtension['key5'] }}" style="height: 25px; width: 25px">
         </div>
     </div>
-    {{ dump( context.context.extensions.testContextExtension['key1'] ) }}
+    {{ parent() }}
 {% endblock %}
