@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/page/content/index.html.twig' %}
+{% block base_main_inner %}
+    <div class="col-xs-12 col-md-3">
+        <h2 style="margin:20px;color:{{ context.context.extensions.testContextExtension['key3'] }};font-size: {{ context.context.extensions.testContextExtension['key2'] }}">{{ context.context.extensions.testContextExtension['key1'] }}</h2>
+    </div>
+    <div class="col-xs-12 col-md-3">
+        <h2 style="margin:20px;color:{{ context.context.extensions.testContextExtension['key6'] }};font-size: {{ context.context.extensions.testContextExtension['key5'] }}">{{ context.context.extensions.testContextExtension['key4'] }}</h2>
+    </div>
+    <div class="col-xs-12 col-md-3">
+        <h2 style="margin:20px;color:{{ context.context.extensions.testContextExtension['key9'] }};font-size: {{ context.context.extensions.testContextExtension['key8'] }}">{{ context.context.extensions.testContextExtension['key7'] }}</h2>
+    </div>
+    <div class="col-xs-12 col-md-3">
+        <h2 style="margin:20px;color:{{ context.context.extensions.testContextExtension['key12'] }};font-size: {{ context.context.extensions.testContextExtension['key11'] }}">{{ context.context.extensions.testContextExtension['key10'] }}</h2>
+    </div>
+    {{ parent() }}
+    {{ dump( page.extensions.testPageExtension['key1'] ) }}
+{% endblock %}

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Slogan Configuration</title>
+        <input-field type="text">
+            <name>slogantext1</name>
+            <label>Slogan 1 text</label>
+        </input-field>
+        <input-field type="single-select">
+            <name>sloganfont1</name>
+            <label>Font 1 Size</label>
+            <disabled>false</disabled>
+            <placeholder>medium</placeholder>
+            <options>
+                <option>
+                    <id>xx-small</id>
+                    <name>xx-small</name>
+                </option>
+                <option>
+                    <id>x-small</id>
+                    <name>x-small</name>
+                </option>
+                <option>
+                    <id>small</id>
+                    <name>small</name>
+                </option>
+                <option>
+                    <id>medium</id>
+                    <name>medium</name>
+                </option>
+                <option>
+                    <id>x-large</id>
+                    <name>x-large</name>
+                </option>
+                <option>
+                    <id>xx-large</id>
+                    <name>xx-large</name>
+                </option>
+                <option>
+                    <id>xxx-large</id>
+                    <name>xx-large</name>
+                </option>
+            </options>
+        </input-field>
+        <input-field type="colorpicker">
+            <name>slogancolor1</name>
+            <label>Slogan Color</label>
+        </input-field>
+
+
+
+        <input-field type="text">
+            <name>slogantext2</name>
+            <label>Slogan 2 text</label>
+        </input-field>
+        <input-field type="single-select">
+            <name>sloganfont2</name>
+            <label>Font 2 Size</label>
+            <disabled>false</disabled>
+            <placeholder>medium</placeholder>
+            <options>
+                <option>
+                    <id>xx-small</id>
+                    <name>xx-small</name>
+                </option>
+                <option>
+                    <id>x-small</id>
+                    <name>x-small</name>
+                </option>
+                <option>
+                    <id>small</id>
+                    <name>small</name>
+                </option>
+                <option>
+                    <id>medium</id>
+                    <name>medium</name>
+                </option>
+                <option>
+                    <id>x-large</id>
+                    <name>x-large</name>
+                </option>
+                <option>
+                    <id>xx-large</id>
+                    <name>xx-large</name>
+                </option>
+                <option>
+                    <id>xxx-large</id>
+                    <name>xx-large</name>
+                </option>
+            </options>
+        </input-field>
+        <input-field type="colorpicker">
+            <name>slogancolor2</name>
+            <label>Slogan Color</label>
+        </input-field>
+
+        <input-field type="text">
+            <name>slogantext3</name>
+            <label>Slogan 3 text</label>
+        </input-field>
+        <input-field type="single-select">
+            <name>sloganfont3</name>
+            <label>Font 3 Size</label>
+            <disabled>false</disabled>
+            <placeholder>medium</placeholder>
+            <options>
+                <option>
+                    <id>xx-small</id>
+                    <name>xx-small</name>
+                </option>
+                <option>
+                    <id>x-small</id>
+                    <name>x-small</name>
+                </option>
+                <option>
+                    <id>small</id>
+                    <name>small</name>
+                </option>
+                <option>
+                    <id>medium</id>
+                    <name>medium</name>
+                </option>
+                <option>
+                    <id>x-large</id>
+                    <name>x-large</name>
+                </option>
+                <option>
+                    <id>xx-large</id>
+                    <name>xx-large</name>
+                </option>
+                <option>
+                    <id>xxx-large</id>
+                    <name>xx-large</name>
+                </option>
+            </options>
+        </input-field>
+        <input-field type="colorpicker">
+            <name>slogancolor3</name>
+            <label>Slogan 3 Color</label>
+        </input-field>
+
+        <input-field type="text">
+            <name>slogantext4</name>
+            <label>Slogan 4 text</label>
+        </input-field>
+        <input-field type="single-select">
+            <name>sloganfont4</name>
+            <label>Font 4 Size</label>
+            <disabled>false</disabled>
+            <placeholder>medium</placeholder>
+            <options>
+                <option>
+                    <id>xx-small</id>
+                    <name>xx-small</name>
+                </option>
+                <option>
+                    <id>x-small</id>
+                    <name>x-small</name>
+                </option>
+                <option>
+                    <id>small</id>
+                    <name>small</name>
+                </option>
+                <option>
+                    <id>medium</id>
+                    <name>medium</name>
+                </option>
+                <option>
+                    <id>x-large</id>
+                    <name>x-large</name>
+                </option>
+                <option>
+                    <id>xx-large</id>
+                    <name>xx-large</name>
+                </option>
+                <option>
+                    <id>xxx-large</id>
+                    <name>xx-large</name>
+                </option>
+            </options>
+        </input-field>
+        <input-field type="colorpicker">
+            <name>slogancolor4</name>
+            <label>Slogan 4 Color</label>
+        </input-field>
+    </card>
+</config>
