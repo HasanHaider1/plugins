@@ -1,3 +1,7 @@
+import './component';
+import './config';
+import './preview';
+
 Shopware.Service('cmsService').registerCmsElement({
     name: 'dailymotion',
     label: 'sw-cms.elements.customDailymotionElement.label',
