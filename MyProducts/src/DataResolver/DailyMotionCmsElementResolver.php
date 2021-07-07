@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Swag\BasicExample\DataResolver;
+namespace MyProducts\DataResolver;
 
 use Shopware\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Shopware\Core\Content\Cms\DataResolver\Element\AbstractCmsElementResolver;
