@@ -1,3 +1,7 @@
+import './component';
+import './config';
+import './preview';
+
 Shopware.Service('cmsService').registerCmsElement({
     name: 'productcategory',
     label: 'sw-cms.elements.customProductCategoryElement.label',
