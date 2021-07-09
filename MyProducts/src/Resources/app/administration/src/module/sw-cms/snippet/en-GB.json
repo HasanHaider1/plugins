@@ -3,6 +3,9 @@
     "elements": {
       "customDailymotionElement": {
         "label": "Dailymotion video"
+      },
+      "customProductCategoryElement": {
+        "label": "Product Category"
       }
     }
   }
