@@ -3,11 +3,24 @@ import './sw-cms-el-productcategory.scss';
 
 Shopware.Component.register('sw-cms-el-productcategory', {
     template,
+
+    mixins: [
+        'cms-element'
+    ],
+
     computed: {
-        defProduct() {
-            return `this.element.config.defProduct.image}`;
+        myProduct() {
+            return `${this.element.config.myProduct.id}`;
         }
     },
+
+    created() {
+        this.createdComponent();
+    },
+
+    methods: {
+        createdComponent() {
+            this.initElementConfig('productcategory');
+        }
+    }
 });
-
-
