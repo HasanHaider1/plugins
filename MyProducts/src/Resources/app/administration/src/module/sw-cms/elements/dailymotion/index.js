@@ -11,7 +11,7 @@ Shopware.Service('cmsService').registerCmsElement({
     defaultConfig: {
         dailyUrl: {
             source: 'static',
-            value: 'x82jkc5?playlist=x6wzqs'
+            value: ''
         }
     }
 });
