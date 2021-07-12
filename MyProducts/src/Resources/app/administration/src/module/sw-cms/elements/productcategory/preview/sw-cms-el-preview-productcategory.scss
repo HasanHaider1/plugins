@@ -1,7 +1,12 @@
 .sw-cms-el-preview-productcategory {
-  position: relative;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  grid-gap: 5px;
+  height: 100%;
 
-  .sw-cms-el-preview-productcategory-img {
+  img {
+    margin: 0;
     display: block;
     max-width: 100%;
   }

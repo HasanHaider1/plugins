@@ -1,12 +1,54 @@
 {% block sw_cms_element_productcategory %}
-    <div class="sw-cms-el-productcategory">
-        <div class="sw-cms-el-productcategory-iframe-wrapper">
-            <iframe frameborder="0"
-                    type="text/html"
-                    width="100%"
-                    height="100%"
-                    :src="defProduct">
-            </iframe>
-        </div>
+    <div class="sw-cms-el-productcategory" :class="classes" :style="verticalAlignStyle">
+        {% block sw_cms_element_productcategory_title %}
+            <div class="sw-cms-el-productcategory__title" v-if="element.config.title.value">
+                {{ element.config.title.value }}
+            </div>
+        {% endblock %}
+
+        {% block sw_cms_element_productcategory_content %}
+            <div class="sw-cms-el-productcategory__content">
+                {% block sw_cms_element_productcategory_arrow_left %}
+                    <div v-if="hasNavigation" class="sw-cms-el-productcategory__navigation">
+                        <sw-icon class="sw-cms-el-productcategory__navigation-button"
+                                 name="default-arrow-head-left"
+                                 size="24">
+                        </sw-icon>
+                    </div>
+                {% endblock %}
+
+                {% block sw_cms_element_productcategory_product_holder %}
+                    <div class="sw-cms-el-productcategory__product-holder" :style="sliderBoxMinWidth" ref="productHolder">
+                        <template v-if="!element.data || !element.data.products">
+                            {% block sw_cms_element_productcategory_demo_data %}
+                                <sw-cms-el-product-box :element="demoProductElement"
+                                                       v-for="index in sliderBoxLimit"
+                                                       :key="index">
+                                </sw-cms-el-product-box>
+                            {% endblock %}
+                        </template>
+
+                        <template v-else>
+                            {% block sw_cms_element_productcategory_products %}
+                                <sw-cms-el-product-box v-for="(product, index) in element.data.products"
+                                                       :key="product.id"
+                                                       v-if="index < sliderBoxLimit"
+                                                       :element="getProductEl(product)">
+                                </sw-cms-el-product-box>
+                            {% endblock %}
+                        </template>
+                    </div>
+                {% endblock %}
+
+                {% block sw_cms_element_productcategory_arrow_right %}
+                    <div v-if="hasNavigation" class="sw-cms-el-productcategory__navigation">
+                        <sw-icon class="sw-cms-el-productcategory__navigation-button"
+                                 name="default-arrow-head-right"
+                                 size="24">
+                        </sw-icon>
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
     </div>
 {% endblock %}
