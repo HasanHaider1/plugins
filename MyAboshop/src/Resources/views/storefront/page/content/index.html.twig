@@ -1,0 +1,37 @@
+{% sw_extends '@Storefront/storefront/page/content/index.html.twig' %}
+
+{% block base_main_inner %}
+    <div class="row">
+        <div class="col-md-4" style="margin: 20px">
+            {% set pickerProperties = {
+                locale: app.request.locale,
+                enableTime: false,
+                selectors: {
+                    openButton: ".openDatePicker",
+                    closeButton: ".closeDatePicker",
+                    clearButton: ".resetDatePicker"
+                },
+                minDate : "2021-08-15",
+                maxDate : "2022-03-18",
+                enableTime : true
+            } %}
+
+            <label>
+                <input type="text"
+                       name="foo"
+                       class="customDate"
+                       value="2021-07-13T00:12:15+00:00"
+                       data-date-picker
+                       data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
+
+                />
+
+                <button class="openDatePicker">Open</button>
+                <button class="closeDatePicker">Close</button>
+                <button class="resetDatePicker">Reset</button>
+            </label>
+        </div>
+    </div>
+
+    {{ parent() }}
+{% endblock %}
