@@ -60,7 +60,7 @@ Shopware.Service('cmsService').registerCmsElement({
         },
         productStreamLimit: {
             source: 'static',
-            value: 10
+            value: 25
         }
     },
     collect: function collect(elem) {
