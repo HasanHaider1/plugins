@@ -3,6 +3,9 @@
 {% block base_main_inner %}
     <div class="row">
         <div class="col-md-4" style="margin: 20px">
+
+
+
             {% set pickerProperties = {
                 locale: app.request.locale,
                 enableTime: false,
@@ -11,11 +14,14 @@
                     closeButton: ".closeDatePicker",
                     clearButton: ".resetDatePicker"
                 },
-                minDate : "2021-08-15",
-                maxDate : "2022-03-18",
-                enableTime : true
-            } %}
+                mode:"multiple",
+                minDate : context.context.extensions.testContextExtension['key1'],
+                maxDate : context.context.extensions.testContextExtension['key2'],
+                enableTime : false,
+                disable: [context.context.extensions.testContextExtension['key3'], "2021-07-08", "2021-07-17" ],
+                dateFormat: "Y-m-d"
 
+            } %}
             <label>
                 <input type="text"
                        name="foo"
@@ -30,6 +36,7 @@
                 <button class="closeDatePicker">Close</button>
                 <button class="resetDatePicker">Reset</button>
             </label>
+
         </div>
     </div>
 
