@@ -1,10 +1,10 @@
-import template from './sw-cms-el-config-product-slider.html.twig';
-import './sw-cms-el-config-product-slider.scss';
+import template from './sw-cms-el-config-productcategory.html.twig';
+import './sw-cms-el-config-productcategory.scss';
 
 const { Component, Mixin } = Shopware;
 const { Criteria, EntityCollection } = Shopware.Data;
 
-Component.register('sw-cms-el-config-product-slider', {
+Component.register('sw-cms-el-config-productcategory', {
     template,
 
     inject: ['repositoryFactory'],
@@ -59,35 +59,35 @@ Component.register('sw-cms-el-config-product-slider', {
 
         productAssignmentTypes() {
             return [{
-                label: this.$tc('sw-cms.elements.productSlider.config.productAssignmentTypeOptions.manual'),
+                label: this.$tc('sw-cms.elements.productcategory.config.productAssignmentTypeOptions.manual'),
                 value: 'static'
             }, {
-                label: this.$tc('sw-cms.elements.productSlider.config.productAssignmentTypeOptions.productStream'),
+                label: this.$tc('sw-cms.elements.productcategory.config.productAssignmentTypeOptions.productStream'),
                 value: 'product_stream'
             }];
         },
 
         productStreamSortingOptions() {
             return [{
-                label: this.$tc('sw-cms.elements.productSlider.config.productStreamSortingOptions.nameAsc'),
+                label: this.$tc('sw-cms.elements.productcategory.config.productStreamSortingOptions.nameAsc'),
                 value: 'name:ASC'
             }, {
-                label: this.$tc('sw-cms.elements.productSlider.config.productStreamSortingOptions.nameDesc'),
+                label: this.$tc('sw-cms.elements.productcategory.config.productStreamSortingOptions.nameDesc'),
                 value: 'name:DESC'
             }, {
-                label: this.$tc('sw-cms.elements.productSlider.config.productStreamSortingOptions.priceAsc'),
+                label: this.$tc('sw-cms.elements.productcategory.config.productStreamSortingOptions.priceAsc'),
                 value: 'listingPrices:ASC'
             }, {
-                label: this.$tc('sw-cms.elements.productSlider.config.productStreamSortingOptions.priceDesc'),
+                label: this.$tc('sw-cms.elements.productcategory.config.productStreamSortingOptions.priceDesc'),
                 value: 'listingPrices:DESC'
             }, {
-                label: this.$tc('sw-cms.elements.productSlider.config.productStreamSortingOptions.creationDateAsc'),
+                label: this.$tc('sw-cms.elements.productcategory.config.productStreamSortingOptions.creationDateAsc'),
                 value: 'createdAt:ASC'
             }, {
-                label: this.$tc('sw-cms.elements.productSlider.config.productStreamSortingOptions.creationDateDesc'),
+                label: this.$tc('sw-cms.elements.productcategory.config.productStreamSortingOptions.creationDateDesc'),
                 value: 'createdAt:DESC'
             }, {
-                label: this.$tc('sw-cms.elements.productSlider.config.productStreamSortingOptions.random'),
+                label: this.$tc('sw-cms.elements.productcategory.config.productStreamSortingOptions.random'),
                 value: 'random'
             }];
         },
@@ -130,7 +130,7 @@ Component.register('sw-cms-el-config-product-slider', {
 
     methods: {
         createdComponent() {
-            this.initElementConfig('product-slider');
+            this.initElementConfig('productcategory');
 
             this.productCollection = new EntityCollection('/product', 'product', Shopware.Context.api);
 

@@ -7,11 +7,11 @@ const criteria = new Criteria();
 criteria.addAssociation('cover');
 
 Shopware.Service('cmsService').registerCmsElement({
-    name: 'product-slider',
-    label: 'My Custom Product Slider',
-    component: 'sw-cms-el-product-slider',
-    configComponent: 'sw-cms-el-config-product-slider',
-    previewComponent: 'sw-cms-el-preview-product-slider',
+    name: 'productcategory',
+    label: 'My Custom Category Slider',
+    component: 'sw-cms-el-productcategory',
+    configComponent: 'sw-cms-el-config-productcategory',
+    previewComponent: 'sw-cms-el-preview-productcategory',
     defaultConfig: {
         products: {
             source: 'static',
@@ -60,7 +60,7 @@ Shopware.Service('cmsService').registerCmsElement({
         },
         productStreamLimit: {
             source: 'static',
-            value: 10
+            value: 25
         }
     },
     collect: function collect(elem) {

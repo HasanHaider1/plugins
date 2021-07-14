@@ -1,8 +1,8 @@
-import template from './sw-cms-el-preview-product-slider.html.twig';
-import './sw-cms-el-preview-product-slider.scss';
+import template from './sw-cms-el-preview-productcategory.html.twig';
+import './sw-cms-el-preview-productcategory.scss';
 
 const { Component } = Shopware;
 
-Component.register('sw-cms-el-preview-product-slider', {
+Component.register('sw-cms-el-preview-productcategory', {
     template
 });
