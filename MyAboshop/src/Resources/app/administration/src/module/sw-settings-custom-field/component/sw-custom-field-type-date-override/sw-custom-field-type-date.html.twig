@@ -1,0 +1,9 @@
+{% block sw_customField_type_base_content %}
+    {% parent() %}
+
+    {% block sw_custom_field_type_date_container %}
+        <div>
+            <m-date-picker v-model="date" :multi="multi" :always-display="false" :format="formatDate"></m-date-picker>
+        </div>
+    {% endblock %}
+{% endblock %}
