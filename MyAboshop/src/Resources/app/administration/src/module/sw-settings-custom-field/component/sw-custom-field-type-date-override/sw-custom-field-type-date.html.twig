@@ -2,8 +2,30 @@
     {% parent() %}
 
     {% block sw_custom_field_type_date_container %}
-        <div>
-            <m-date-picker v-model="date" :multi="multi" :always-display="false" :format="formatDate"></m-date-picker>
-        </div>
+        <template>
+            <div>
+                <m-date-picker v-model="date" :multi="multi" :always-display="false" :format="formatDate"></m-date-picker>
+            </div>
+        </template>
+
+        <script>
+            import mDatePicker from './multiDatePicker'
+            export default {
+                data () {
+                    return {
+                        multi: true,
+                        date: []
+                    }
+                },
+                components: {
+                    'm-date-picker': mDatePicker
+                },
+                methods: {
+                    formatDate(date) {
+                        return data.toLocaleDateString();
+                    }
+                }
+            }
+        </script>
     {% endblock %}
 {% endblock %}
