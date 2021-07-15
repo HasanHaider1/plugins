@@ -1,4 +1,3 @@
-<template>
   <div class="container">
     <div class="dp-mask" v-show="panelShow" @click="panelShow = false"></div>
     <div class="selected-date" @click="panelShow = !panelShow">
@@ -45,7 +44,6 @@
       </div>
     </transition>
   </div>
-</template>
 
 <script src="./multiDatePicker.js"></script>
 

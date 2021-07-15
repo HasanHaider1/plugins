@@ -1,1 +1,1 @@
-import './sw-custom-field-type-date.html.twig/';
+import './sw-custom-field-type-date/';

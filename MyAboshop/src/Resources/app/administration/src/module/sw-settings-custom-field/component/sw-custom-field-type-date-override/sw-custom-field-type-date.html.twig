@@ -2,11 +2,9 @@
     {% parent() %}
 
     {% block sw_custom_field_type_date_container %}
-        <template>
-            <div>
+        <div>
                 <m-date-picker v-model="date" :multi="multi" :always-display="false" :format="formatDate"></m-date-picker>
-            </div>
-        </template>
+        </div>
 
         <script>
             import mDatePicker from './multiDatePicker'
