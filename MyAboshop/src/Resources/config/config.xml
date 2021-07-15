@@ -11,7 +11,8 @@
             <name>maxdate</name>
             <label>Maximum Date</label>
         </input-field>
-        <input-field type="date" >
+        <input-field type="date">
+
             <name>disableddate</name>
             <label>Disabled Date</label>
         </input-field>
