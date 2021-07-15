@@ -52,7 +52,11 @@
                         {% block element_product_slider_element %}
                             <div class="product-slider-container"
                                  data-product-slider-container="true">
+                                {{ dump(element.data.products.elements) }}
                                 {% for product in element.data.products.elements %}
+                                    {{ dump(element.data.products.elements) }}
+                                    {{ dump("Product") }}
+                                    {{ dump(product) }}
                                     {% block element_product_slider_inner_item %}
                                         <div class="product-slider-item">
                                             {% sw_include '@Storefront/storefront/component/product/card/box.html.twig' with {
