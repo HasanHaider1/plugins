@@ -52,13 +52,6 @@
                                     </sw-entity-single-select>
                                 {% endblock %}
 
-                                {% block sw_cms_element_productcategory_config_content_product_stream_performance_hint %}
-                                    <sw-alert
-                                            class="sw-cms-el-config-productcategory__product-stream-performance-hint"
-                                            variant="info">
-                                        {{ $tc('sw-cms.elements.productcategory.config.textProductStreamPerformanceHint') }}
-                                    </sw-alert>
-                                {% endblock %}
 
                                 {% block sw_cms_element_productcategory_config_content_product_stream_preview %}
                                     <sw-modal
@@ -83,28 +76,7 @@
                                     </sw-modal>
                                 {% endblock %}
 
-                                <sw-container columns="1fr 1fr" gap="30px">
-                                    {% block sw_cms_element_productcategory_config_content_product_stream_sorting %}
-                                        <sw-single-select
-                                                :label="$tc('sw-cms.elements.productcategory.config.label.productStreamSorting')"
-                                                class="sw-cms-el-config-productcategory__product-stream-sorting"
-                                                v-model="element.config.productStreamSorting.value"
-                                                :disabled="!productStream"
-                                                :placeholder="$tc('sw-cms.elements.productcategory.config.placeholder.productStreamSorting')"
-                                                :options="productStreamSortingOptions">
-                                        </sw-single-select>
-                                    {% endblock %}
 
-                                    {% block sw_cms_element_productcategory_config_content_product_stream_limit %}
-                                        <sw-number-field
-                                                :label="$tc('sw-cms.elements.productcategory.config.label.productStreamLimit')"
-                                                class="sw-cms-el-config-productcategory__product-stream-limit"
-                                                :disabled="!productStream"
-                                                :min="1"
-                                                v-model="element.config.productStreamLimit.value">
-                                        </sw-number-field>
-                                    {% endblock %}
-                                </sw-container>
 
                                 {% block sw_cms_element_productcategory_config_content_product_stream_preview_link %}
                                     <div class="sw-cms-el-config-productcategory__product-stream-preview-link-container">
