@@ -7,16 +7,10 @@
                         <sw-tabs-item :title="$tc('sw-cms.elements.general.config.tab.content')"
                                       name="content"
                                       :activeTab="active">
-                            {{ $tc('sw-cms.elements.general.config.tab.content') }}
+                            <h4>Configuration</h4>
                         </sw-tabs-item>
                     {% endblock %}
-                    {% block sw_cms_element_productcategory_config_tab_options %}
-                        <sw-tabs-item :title="$tc('sw-cms.elements.general.config.tab.settings')"
-                                      name="settings"
-                                      :activeTab="active">
-                            {{ $tc('sw-cms.elements.general.config.tab.settings') }}
-                        </sw-tabs-item>
-                    {% endblock %}
+
                 </template>
 
                 <template slot="content" slot-scope="{ active }">

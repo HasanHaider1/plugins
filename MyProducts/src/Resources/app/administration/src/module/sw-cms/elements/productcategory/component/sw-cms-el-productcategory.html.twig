@@ -30,6 +30,7 @@
 
                         <template v-else>
                             {% block sw_cms_element_productcategory_products %}
+                                {{ dump(element.data.products) }}
                                 <sw-cms-el-product-box v-for="(product, index) in element.data.products"
                                                        :key="product.id"
                                                        v-if="index < sliderBoxLimit"

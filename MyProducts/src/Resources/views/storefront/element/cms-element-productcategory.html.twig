@@ -1,10 +1,7 @@
-
 {% block element_productcategory %}
     {% if not sliderConfig %}
         {% set sliderConfig = element.fieldConfig.elements %}
-        {{ dump(element.fieldConfig.elements) }}
-        {{ dump(sliderConfig) }}
-        {{ dump(element.type) }}
+
 
     {% endif %}
 
@@ -47,16 +44,14 @@
                             </div>
                         {% endif %}
                     {% endblock %}
-                    {{ dump(sliderConfig.products.value) }}
-                    {{ dump(element.data.products.elements) }}
-                    {% block element_product_slider_inner %}
+                    {% block element_productcategory_inner %}
                         {% block element_productcategory_element %}
                             <div class="product-slider-container"
                                  data-product-slider-container="true">
-
+                                {{ dump(element.data.products.elements) }}
                                 {% for product in element.data.products.elements %}
                                     {{ dump(element.data.products.elements) }}
-                                    {% block element_product_slider_inner_item %}
+                                    {% block element_productcategory_inner_item %}
                                         <div class="product-slider-item">
                                             {% sw_include '@Storefront/storefront/component/product/card/box.html.twig' with {
                                                 'layout': sliderConfig.boxLayout.value,

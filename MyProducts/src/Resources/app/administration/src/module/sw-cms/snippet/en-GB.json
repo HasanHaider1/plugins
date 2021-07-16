@@ -4,7 +4,7 @@
       "customDailymotionElement": {
         "label": "Dailymotion video"
       },
-      "customProductCategoryElement": {
+      "productcategoryelement": {
         "label": "Product Category"
       }
     }
