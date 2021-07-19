@@ -16,6 +16,9 @@
             <name>disableddate</name>
             <label>Disabled Date</label>
         </input-field>
-
+        <component name="sw-custom-field-type-date">
+            <name>multidatepicker</name>
+            <label>Choose a date to disable</label>
+        </component>
     </card>
 </config>
