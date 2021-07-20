@@ -21,4 +21,78 @@
             <label>Choose a date to disable</label>
         </component>
     </card>
+    <card>
+        <title>Product Details Page</title>
+        <input-field type="single-select">
+            <name>fieldtype1</name>
+            <label>First Field Type</label>
+            <options>
+                <option>
+                    <id>1</id>
+                    <name>text</name>
+                </option>
+                <option>
+                    <id>2</id>
+                    <name>date</name>
+                </option>
+                <option>
+                    <id>3</id>
+                    <name>checkbox</name>
+                </option>
+                <option>
+                    <id>4</id>
+                    <name>dropdown</name>
+                </option>
+            </options>
+
+        </input-field>
+
+        <input-field type="single-select">
+            <name>fieldtype2</name>
+            <label>Second Field Type</label>
+            <options>
+                <option>
+                    <id>1</id>
+                    <name>text</name>
+                </option>
+                <option>
+                    <id>2</id>
+                    <name>date</name>
+                </option>
+                <option>
+                    <id>3</id>
+                    <name>checkbox</name>
+                </option>
+                <option>
+                    <id>4</id>
+                    <name>dropdown</name>
+                </option>
+            </options>
+
+        </input-field>
+
+        <input-field type="single-select">
+            <name>fieldtype3</name>
+            <label>Third Field Type</label>
+            <options>
+                <option>
+                    <id>1</id>
+                    <name>text</name>
+                </option>
+                <option>
+                    <id>2</id>
+                    <name>date</name>
+                </option>
+                <option>
+                    <id>3</id>
+                    <name>checkbox</name>
+                </option>
+                <option>
+                    <id>4</id>
+                    <name>dropdown</name>
+                </option>
+            </options>
+
+        </input-field>
+    </card>
 </config>
