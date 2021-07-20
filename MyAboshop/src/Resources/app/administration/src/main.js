@@ -1,1 +1,1 @@
-import './sw-custom-field-type-date/';
+import 'sw-custom-field-type-date-override/';
