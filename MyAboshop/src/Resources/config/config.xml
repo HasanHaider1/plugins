@@ -22,8 +22,11 @@
         </component>
     </card>
     <card>
-        <title>Product Details Page</title>
-
+        <title>Product Checkout Page</title>
+        <input-field type="text">
+            <name>label1</name>
+            <label>Label for first field</label>
+        </input-field>
         <input-field type="single-select">
             <name>fieldtype1</name>
             <label>First Field Type</label>
@@ -47,7 +50,10 @@
             </options>
 
         </input-field>
-
+        <input-field type="text">
+            <name>label2</name>
+            <label>Label for second field</label>
+        </input-field>
         <input-field type="single-select">
             <name>fieldtype2</name>
             <label>Second Field Type</label>
@@ -72,6 +78,10 @@
 
         </input-field>
 
+        <input-field type="text">
+            <name>label3</name>
+            <label>Label for third field</label>
+        </input-field>
 
         <input-field type="single-select">
             <name>fieldtype3</name>

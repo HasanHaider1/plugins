@@ -4,9 +4,10 @@
     <div class="row" style="margin-left: 15px">
 
         {% if config('MyAboshop.config.fieldtype1') == "text" or config('MyAboshop.config.fieldtype1') == "date" or config('MyAboshop.config.fieldtype1') == "checkbox" %}
-        <div class="col-md-12" style="margin-top: 5px">
+        <div class="col-md-4" style="margin-top: 5px">
 
                 <input type="{{ config('MyAboshop.config.fieldtype1') }}">
+                <label for="fieldtype1">{{ config('MyAboshop.config.label1') }}</label><br>
         </div>
             {% else %}
                 <p>Dropdown Under Construction</p>
@@ -25,9 +26,10 @@
         </div>
         -->
         {% if config('MyAboshop.config.fieldtype2') == "text" or config('MyAboshop.config.fieldtype2') == "date" or config('MyAboshop.config.fieldtype2') == "checkbox" %}
-            <div class="col-md-12" style="margin-top: 5px">
+            <div class="col-md-4" style="margin-top: 5px">
 
                 <input type="{{ config('MyAboshop.config.fieldtype2') }}">
+                <label for="fieldtype2">{{ config('MyAboshop.config.label2') }}</label><br>
             </div>
         {% else %}
             <p>Dropdown Under Construction</p>
@@ -39,12 +41,15 @@
         </div>
         -->
         {% if config('MyAboshop.config.fieldtype3') == "text" or config('MyAboshop.config.fieldtype3') == "date" or config('MyAboshop.config.fieldtype3') == "checkbox" %}
-            <div class="col-md-12" style="margin-top: 5px">
+            <div class="col-md-4" style="margin-top: 5px">
 
                 <input type="{{ config('MyAboshop.config.fieldtype3') }}">
+                <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
             </div>
         {% else %}
-            <p>Dropdown Under Construction</p>
+            <div class="col-md-4" style="margin-top: 5px">
+                <p>Dropdown Under Construction</p>
+            </div>
         {% endif %}
     </div>
     <!--
