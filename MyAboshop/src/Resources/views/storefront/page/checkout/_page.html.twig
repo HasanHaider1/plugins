@@ -1,0 +1,55 @@
+{% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
+{% block page_checkout_main %}
+    {{ parent() }}
+    <div class="row" style="margin-left: 15px">
+
+        {% if config('MyAboshop.config.fieldtype1') == "text" or config('MyAboshop.config.fieldtype1') == "date" or config('MyAboshop.config.fieldtype1') == "checkbox" %}
+        <div class="col-md-12" style="margin-top: 5px">
+
+                <input type="{{ config('MyAboshop.config.fieldtype1') }}">
+        </div>
+            {% else %}
+                <p>Dropdown Under Construction</p>
+        {% endif %}
+        <!--
+        <div class="col-md-12" style="margin-top: 5px">
+
+            <p>{{ config('MyAboshop.config.label1') }}</p>
+        </div>
+        -->
+        <!--
+        <div class="col-md-12" style="margin-top: 5px">
+
+            <h6>{{ config('MyAboshop.config.label2') }}</h6>
+
+        </div>
+        -->
+        {% if config('MyAboshop.config.fieldtype2') == "text" or config('MyAboshop.config.fieldtype2') == "date" or config('MyAboshop.config.fieldtype2') == "checkbox" %}
+            <div class="col-md-12" style="margin-top: 5px">
+
+                <input type="{{ config('MyAboshop.config.fieldtype2') }}">
+            </div>
+        {% else %}
+            <p>Dropdown Under Construction</p>
+        {% endif %}
+        <!--
+        <div class="col-md-12" style="margin-top: 5px">
+
+            <h6>{{ config('MyAboshop.config.label3') }}</h6>
+        </div>
+        -->
+        {% if config('MyAboshop.config.fieldtype3') == "text" or config('MyAboshop.config.fieldtype3') == "date" or config('MyAboshop.config.fieldtype3') == "checkbox" %}
+            <div class="col-md-12" style="margin-top: 5px">
+
+                <input type="{{ config('MyAboshop.config.fieldtype3') }}">
+            </div>
+        {% else %}
+            <p>Dropdown Under Construction</p>
+        {% endif %}
+    </div>
+    <!--
+    {{ dump(config('MyAboshop.config.fieldtype1')) }}
+    {{ dump(config('MyAboshop.config.fieldtype2')) }}
+    {{ dump(config('MyAboshop.config.fieldtype3')) }}
+    -->
+{% endblock %}

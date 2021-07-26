@@ -1,0 +1,25 @@
+{% block layout_header_actions_cart_widget %}
+    <span class="header-cart-icon">
+        {% sw_icon 'bag' %}
+    </span>
+    {% if page.cart.lineItems|length > 0 %}
+        <span class="badge badge-primary header-cart-badge">{{ page.cart.lineItems|length }}</span>
+    {% endif %}
+    <span class="header-cart-total">
+        {{ page.cart.price.positionPrice|currency }}{{ "general.star"|trans|sw_sanitize }}
+    </span>
+    <!--
+    <div class="row">
+        <div class="col-md-4">
+            <input type="{{ config('MyAboshop.config.fieldtype1') }}">
+        </div>
+        <div class="col-md-4">
+            <input type="{{ config('MyAboshop.config.fieldtype2') }}">
+        </div>
+        <div class="col-md-4">
+            <input type="{{ config('MyAboshop.config.fieldtype3') }}">
+        </div>
+
+    </div>
+    -->
+{% endblock %}

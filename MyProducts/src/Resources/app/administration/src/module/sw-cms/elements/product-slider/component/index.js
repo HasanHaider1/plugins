@@ -12,7 +12,7 @@ Component.register('sw-cms-el-product-slider', {
 
     data() {
         return {
-            sliderBoxLimit: 3
+            sliderBoxLimit: 2
         };
     },
 
@@ -34,11 +34,11 @@ Component.register('sw-cms-el-product-slider', {
                         name: 'demoProductElement',
                         description: `This is the demo product I will be using for my third task.`.trim(),
                         price: [
-                            { gross: 19.90 }
+                            { gross: 20.20 }
                         ],
                         cover: {
                             media: {
-                                url: '',
+                                url: '/administration/static/img/cms/preview_camera_large.jpg',
                                 alt: 'My First Product'
                             }
                         }

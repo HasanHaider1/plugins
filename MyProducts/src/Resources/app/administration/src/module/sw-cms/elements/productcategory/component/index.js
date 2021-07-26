@@ -34,7 +34,7 @@ Component.register('sw-cms-el-productcategory', {
                         name: 'Demo Product Element',
                         description: `This is the demo product I will be using for my third task.`.trim(),
                         price: [
-                            { gross: 19.90 }
+                            { gross: 20.99 }
                         ],
                         cover: {
                             media: {

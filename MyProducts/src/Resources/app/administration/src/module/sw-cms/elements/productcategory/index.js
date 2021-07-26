@@ -8,7 +8,7 @@ criteria.addAssociation('cover');
 
 Shopware.Service('cmsService').registerCmsElement({
     name: 'productcategory',
-    label: 'sw-cms.elements.productcategoryelement.label',
+    label: 'Product Category',
     component: 'sw-cms-el-productcategory',
     configComponent: 'sw-cms-el-config-productcategory',
     previewComponent: 'sw-cms-el-preview-productcategory',

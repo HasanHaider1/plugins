@@ -1,19 +1,16 @@
-{% block element_productcategory %}
+{% block element_product_slider %}
     {% if not sliderConfig %}
         {% set sliderConfig = element.fieldConfig.elements %}
-
-
     {% endif %}
-    <!-- Checking -->
-    {{ dump(element.type) }}
 
+    {{ dump(element.type) }}
     <div class="cms-element-{{ element.type }}{% if sliderConfig.displayMode.value == "standard" and sliderConfig.verticalAlign.value %} has-vertical-alignment{% endif %}">
-        {% block element_productcategory_alignment %}
+        {% block element_product_slider_alignment %}
             {% if config.verticalAlign.value %}
                 <div class="cms-element-alignment{% if sliderConfig.verticalAlign.value == "center" %} align-self-center{% elseif sliderConfig.verticalAlign.value == "flex-end" %} align-self-end{% else %} align-self-start{% endif %}">
             {% endif %}
 
-            {% set productcategoryOptions = {
+            {% set productSliderOptions = {
                 productboxMinWidth: sliderConfig.elMinWidth.value ? sliderConfig.elMinWidth.value : '',
                 slider: {
                     gutter: 30,
@@ -26,41 +23,37 @@
             } %}
 
             {% if not sliderConfig.navigation.value %}
-                {% set productcategoryOptions = productcategoryOptions|replace_recursive({
+                {% set productSliderOptions = productSliderOptions|replace_recursive({
                     slider: {
                         mouseDrag: true
                     }
                 }) %}
             {% endif %}
 
-            {% block element_productcategory_slider %}
-                <div class="base-slider productcategory{% if sliderConfig.border.value %} has-border{% endif %}{% if sliderConfig.navigation.value %} has-nav{% endif %}"
-                     data-productcategory="true"
-                     data-productcategory-options="{{ productcategoryOptions|json_encode }}">
+            {% block element_product_slider_slider %}
+                <div class="base-slider product-slider{% if sliderConfig.border.value %} has-border{% endif %}{% if sliderConfig.navigation.value %} has-nav{% endif %}"
+                     data-product-slider="true"
+                     data-product-slider-options="{{ productSliderOptions|json_encode }}">
 
-                    <!-- Checking -->
-                    {{ dump(productcategoryOptions|json_encode) }}
-
-                    {% block element_productcategory_title %}
-                        <!-- Checking -->
+                    {% block element_product_slider_title %}
                         {{ dump(sliderConfig.title.value) }}
                         {% if sliderConfig.title.value %}
                             <div class="cms-element-title">
-                                <p class="cms-element-title-paragraph">{{ sliderConfig.title.value }}</p>
 
+                                <p class="cms-element-title-paragraph">{{ sliderConfig.title.value }}</p>
                             </div>
                         {% endif %}
                     {% endblock %}
-                    {% block element_productcategory_inner %}
-                        {% block element_productcategory_element %}
-                            <div class="productcategory-container"
-                                 data-productcategory-container="true">
 
-                                <!-- Checking -->
-                                {{ dump(element) }}
+                    {% block element_product_slider_inner %}
+                        {% block element_product_slider_element %}
+                            {{ dump(element) }}
+                            <div class="product-slider-container"
+                                 data-product-slider-container="true">
+
                                 {% for product in element.data.products.elements %}
-                                    {% block element_productcategory_inner_item %}
-                                        <div class="productcategory-item">
+                                    {% block element_product_slider_inner_item %}
+                                        <div class="product-slider-item">
                                             {% sw_include '@Storefront/storefront/component/product/card/box.html.twig' with {
                                                 'layout': sliderConfig.boxLayout.value,
                                                 'displayMode': sliderConfig.displayMode.value
@@ -71,19 +64,19 @@
                             </div>
                         {% endblock %}
 
-                        {% block element_productcategory_controls %}
+                        {% block element_product_slider_controls %}
                             {% if sliderConfig.navigation.value %}
-                                <div class="productcategory-controls-container">
+                                <div class="product-slider-controls-container">
                                     <div class="base-slider-controls"
-                                         data-productcategory-controls="true">
-                                        {% block element_productcategory_controls_items %}
-                                            <button class="base-slider-controls-prev productcategory-controls-prev{% if sliderConfig.border.value %} has-border{% endif %}">
-                                                {% block element_productcategory_controls_items_prev_icon %}
+                                         data-product-slider-controls="true">
+                                        {% block element_product_slider_controls_items %}
+                                            <button class="base-slider-controls-prev product-slider-controls-prev{% if sliderConfig.border.value %} has-border{% endif %}">
+                                                {% block element_product_slider_controls_items_prev_icon %}
                                                     {% sw_icon 'arrow-head-left' %}
                                                 {% endblock %}
                                             </button>
-                                            <button class="base-slider-controls-next productcategory-controls-next{% if sliderConfig.border.value %} has-border{% endif %}">
-                                                {% block element_productcategory_controls_items_next_icon %}
+                                            <button class="base-slider-controls-next product-slider-controls-next{% if sliderConfig.border.value %} has-border{% endif %}">
+                                                {% block element_product_slider_controls_items_next_icon %}
                                                     {% sw_icon 'arrow-head-right' %}
                                                 {% endblock %}
                                             </button>
