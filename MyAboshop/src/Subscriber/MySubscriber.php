@@ -44,16 +44,13 @@ class MySubscriber implements EventSubscriberInterface
 
         //assign the array to the page
         $event->getPage()->assign($array);
-        $event->getPage()->assign($array2);
         //add the array to the page as an extension
         $event->getPage()->addExtension('testPageExtension', new ArrayEntity($array));
-        $event->getPage()->addExtension('testPageExtension', new ArrayEntity($array2));
 
         //assign the array to the context
         $event->getContext()->assign($array);
-        $event->getContext()->assign($array2);
 
         //add the array to the context as an extension
-        $event->getContext()->addExtension('testContextExtension', new ArrayEntity($array2));
+        $event->getContext()->addExtension('testContextExtension', new ArrayEntity($array));
     }
 }
