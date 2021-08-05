@@ -7,6 +7,7 @@ use Shopware\Core\Framework\Plugin;
 class MyAboshop extends Plugin
 {
     /*
-
+        My random comment. Just checking
     */
+
 }
