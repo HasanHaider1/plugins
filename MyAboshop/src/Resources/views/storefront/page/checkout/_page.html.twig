@@ -1,9 +1,8 @@
 {% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
 {% block page_checkout_main %}
 
-    {% for i in config('MyAboshop.config.textarea') %}
-        {{ dump(i) }}
-    {% endfor %}
+    {{ dump(config('MyAboshop.config.textarea')) }}
+
     {{ parent() }}
     <div class="row" style="margin-left: 15px">
 
@@ -45,8 +44,10 @@
                 </div>
             {% else %}
             <div class="col-md-3" style="margin-top: 5px">
-                <select name="dropdown" id="dropdown" ></select>
+                <select name="dropdown" id="dropdown" >
                 <option value="" disabled selected>Select your option</option>
+                <option value="hurr">Durr</option>
+                </select>
                 <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
             </div>
         {% endif %}
@@ -71,8 +72,10 @@
             </div>
         {% else %}
             <div class="col-md-3" style="margin-top: 5px">
-                <select name="dropdown" id="dropdown" ></select>
+                <select name="dropdown" id="dropdown" >
                 <option value="" disabled selected>Select your option</option>
+                <option value="hurr">Durr</option>
+                </select>
                 <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
             </div>
         {% endif %}
@@ -90,10 +93,18 @@
             </div>
         {% else %}
             <div class="col-md-3" style="margin-top: 5px">
-                <select name="dropdown" id="dropdown" ></select>
-                <option value="" disabled selected>Select your option</option>
+                <select name="dropdown" id="dropdown" >
+                    <option value="" disabled selected>Select your option</option>
+                    {% for i in config('MyAboshop.config.textarea') |split('\n') %}
+                        <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
                 <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
             </div>
+
+
+
+
         {% endif %}
     </div>
     <!--

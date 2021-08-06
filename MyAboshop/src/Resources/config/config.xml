@@ -5,7 +5,7 @@
         <title>Date Picker Configuration</title>
         <component name="my-date-picker">
             <name>mydatepicker</name>
-            <label>Mera date picker for custom dates</label>
+            <label>New Date Picker</label>
         </component>
         <input-field type="date">
             <name>mindate</name>
