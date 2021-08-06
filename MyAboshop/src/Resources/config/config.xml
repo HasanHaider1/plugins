@@ -3,6 +3,10 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Date Picker Configuration</title>
+        <component name="my-date-picker">
+            <name>mydatepicker</name>
+            <label>My Custom multiple date picker</label>
+        </component>
         <input-field type="date">
             <name>mindate</name>
             <label>Minimum Date</label>
@@ -16,13 +20,17 @@
             <name>disableddate</name>
             <label>Disabled Date</label>
         </input-field>
-        <component name="sw-custom-field-type-date">
+        <component name="sw-datepicker">
             <name>multidatepicker</name>
             <label>Choose a date to disable</label>
         </component>
     </card>
     <card>
         <title>Product Checkout Page</title>
+        <component name="example">
+            <name>examplecomponent</name>
+            <label>My Example Component</label>
+        </component>
         <input-field type="text">
             <name>label1</name>
             <label>Label for first field</label>
@@ -105,6 +113,10 @@
                 </option>
             </options>
 
+        </input-field>
+        <input-field type="textarea">
+            <name>textarea</name>
+            <label>In case of Dropdown, enter options (one in a row)</label>
         </input-field>
     </card>
 </config>

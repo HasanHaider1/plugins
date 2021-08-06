@@ -45,6 +45,6 @@
     </transition>
   </div>
 
-<script src="./multiDatePicker.js"></script>
+<script src="multiDatePicker.js"></script>
 
-<style src="./multiDatePicker.css"></style>
+<style src="multiDatePicker.css"></style>
