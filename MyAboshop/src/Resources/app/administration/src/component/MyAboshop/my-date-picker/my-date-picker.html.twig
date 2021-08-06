@@ -1,10 +1,26 @@
-<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"/>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"/>
-<script src="http://multidatespickr.sourceforge.net/jquery-ui.multidatespicker.js"/>
+<div class="col-md-4" style="margin: 20px">
 
-<input type="text" id="datePick" />
+    {% set pickerProperties = {
+        locale: app.request.locale,
+        enableTime: false,
 
-$(document).ready(function(}{
-$('#datePick').multiDatesPicker();
-});
+        mode:"multiple",
+        minDate : context.context.extensions.testContextExtension['key1'],
+        maxDate : context.context.extensions.testContextExtension['key2'],
+        enableTime : false,
+        disable: [context.context.extensions.testContextExtension['key3'], "2021-07-08", "2021-07-17" ],
+        dateFormat: "Y-m-d"
+
+    } %}
+    <label>
+        <input type="text"
+               name="foo"
+               class="customDate"
+               value="2021-07-13T00:12:15+00:00"
+               data-date-picker
+               data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
+        />
+
+    </label>
+
+</div>
