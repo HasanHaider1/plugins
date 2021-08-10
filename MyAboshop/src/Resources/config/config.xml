@@ -3,7 +3,7 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Date Picker Configuration</title>
-        <component name="my-date-picker">
+        <component name="my-date-picker2">
             <name>mydatepicker</name>
             <label>New Date Picker</label>
         </component>

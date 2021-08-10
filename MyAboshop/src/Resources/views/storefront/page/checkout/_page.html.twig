@@ -1,7 +1,5 @@
 {% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
 {% block page_checkout_main %}
-
-
     {{ parent() }}
     <div class="row" style="margin-left: 15px">
 
@@ -13,9 +11,6 @@
         </div>
             {% elseif config('MyAboshop.config.fieldtype1') == "date"%}
                 <div class="col-md-12" style="margin: 20px">
-
-
-
                     {% set pickerProperties = {
                         locale: app.request.locale,
                         enableTime: false,
