@@ -27,10 +27,7 @@
     </card>
     <card>
         <title>Product Checkout Page</title>
-        <component name="example">
-            <name>examplecomponent</name>
-            <label>My Example Component</label>
-        </component>
+
         <input-field type="text">
             <name>label1</name>
             <label>Label for first field</label>

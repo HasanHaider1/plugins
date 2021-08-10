@@ -9,5 +9,9 @@
             <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
             <tag name="kernel.event_subscriber"/>
         </service>
+        <service id="MyAboshop\Service\AddDataToMails" decorates="Shopware\Core\Content\Mail\Service\MailService">
+            <argument type="service" id="MyAboshop\Service\AddDataToMails.inner" />
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+        </service>
     </services>
 </container>
