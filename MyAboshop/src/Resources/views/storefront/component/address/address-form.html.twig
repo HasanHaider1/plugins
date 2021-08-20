@@ -3,19 +3,27 @@
     {{ parent() }}
     <div class="row">
         <div class = "col-md-12" style="margin-left: 5px">
-
             <label for="personalMail">Email*</label>
             <input type="email"
 
                    class="form-control{% if formViolations.getViolations('/email') is not empty %} is-invalid{% endif %}"
                    autocomplete="section-personal email"
-                   id="personalMail"
+                   id="email"
                    placeholder="{{ "account.personalMailPlaceholder"|trans|striptags }}"
                    name="email"
                     {% if config('core.loginRegistration.requireEmailConfirmation') %}
                         data-form-validation-equal="personalMail"
                     {% endif %}
                    required="required">
+
         </div>
     </div>
+
+    <script type="text/javascript">
+
+        var email = document.getElementById('email').value;
+        console.log(document.getElementById('email').value);
+    </script>
+
+
 {% endblock %}

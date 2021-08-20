@@ -1,28 +1,5 @@
-{% block %}
-<div class="col-md-4" style="margin: 20px">
-
-    {% set pickerProperties = {
-        locale: app.request.locale,
-        enableTime: false,
-
-        mode:"multiple",
-        minDate : context.context.extensions.testContextExtension['key1'],
-        maxDate : context.context.extensions.testContextExtension['key2'],
-        enableTime : false,
-        disable: [context.context.extensions.testContextExtension['key3'], "2021-07-08", "2021-07-17" ],
-        dateFormat: "Y-m-d"
-
-    } %}
-    <label>
-        <input type="text"
-               name="foo"
-               class="customDate"
-               value="2021-07-13T00:12:15+00:00"
-               data-date-picker
-               data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
-        />
-
-    </label>
-
+<div class="container" >
+    <h3>Bootstrap Multi Select Date Picker</h3>
+    <input type="text" class="form-control date" placeholder="Pick the multiple dates">
 </div>
-{% endblock %}
+

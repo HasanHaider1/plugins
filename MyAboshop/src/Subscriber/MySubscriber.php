@@ -7,12 +7,16 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Shopware\Core\Framework\Struct\ArrayEntity;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
 
+
+
 class MySubscriber implements EventSubscriberInterface
 {
     protected $SystemConfig;
+    public $me;
     public function __construct(SystemConfigService $SystemConfig)
     {
         $this->SystemConfig = $SystemConfig;
+
     }
 
 
@@ -28,14 +32,13 @@ class MySubscriber implements EventSubscriberInterface
     {
         // Do something
         // E.g. work with the loaded entities: $event->getEntities()
+
         $something = $this->SystemConfig->get('Hello');
         $configMinDate = $this->SystemConfig->get('MyAboshop.config.mindate');
         $configMaxDate = $this->SystemConfig->get('MyAboshop.config.maxdate');
         $configDisabledDate = $this->SystemConfig->get('MyAboshop.config.disableddate');
 
         $array = ['key1' => $configMinDate,'key2' => $configMaxDate,'key3' => $configDisabledDate];
-
-
 
         $configfield1 = $this->SystemConfig->get('MyAboshop.config.fieldtype1');
         $configfield2 = $this->SystemConfig->get('MyAboshop.config.fieldtype2');

@@ -3,7 +3,8 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Date Picker Configuration</title>
-        <component name="my-date-picker2">
+
+        <component name="my-date-picker">
             <name>mydatepicker</name>
             <label>New Date Picker</label>
         </component>
@@ -20,10 +21,7 @@
             <name>disableddate</name>
             <label>Disabled Date</label>
         </input-field>
-        <component name="sw-datepicker">
-            <name>multidatepicker</name>
-            <label>Choose a date to disable</label>
-        </component>
+
     </card>
     <card>
         <title>Product Checkout Page</title>
@@ -55,6 +53,12 @@
             </options>
 
         </input-field>
+        <input-field type="textarea">
+            <name>textarea1</name>
+            <label>In case of Dropdown, enter options (one in a row)</label>
+        </input-field>
+
+
         <input-field type="text">
             <name>label2</name>
             <label>Label for second field</label>
@@ -81,6 +85,10 @@
                 </option>
             </options>
 
+        </input-field>
+        <input-field type="textarea">
+            <name>textarea2</name>
+            <label>In case of Dropdown, enter options (one in a row)</label>
         </input-field>
 
         <input-field type="text">
@@ -112,7 +120,7 @@
 
         </input-field>
         <input-field type="textarea">
-            <name>textarea</name>
+            <name>textarea3</name>
             <label>In case of Dropdown, enter options (one in a row)</label>
         </input-field>
     </card>

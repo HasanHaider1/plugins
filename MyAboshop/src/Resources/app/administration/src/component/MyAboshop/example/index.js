@@ -1,4 +1,6 @@
+import template from 'example.html.twig';
+
 Shopware.Component.register('example', {
     // Configuration here
-    template: '<h2>Hello Dunya!</h2>'
+    template: template
 });
