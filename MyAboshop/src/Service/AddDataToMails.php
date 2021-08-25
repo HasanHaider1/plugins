@@ -41,8 +41,10 @@ class AddDataToMails extends AbstractMailService
         return $event;
     }
     */
+
     public function send(array $data, Context $context, array $templateData = []): ?Email
     {
+
 
 
         $templateData['recipients'] = ['hasanhere11@gmail.com' => 'recipient one', 'hasanhere11@gmail.com' => 'recipient two'];
@@ -56,5 +58,7 @@ class AddDataToMails extends AbstractMailService
         $templateData['field3'] = $configfield3;
         $templateData['recipients'] = $configfield1;
         return $this->mailService->send($data, $context, $templateData);
-    }
+
+        }
+
 }
