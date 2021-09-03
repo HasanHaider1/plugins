@@ -2,14 +2,19 @@ import Flatpickr from 'flatpickr';
 import 'flatpickr/dist/l10n';
 import template from './sw-datepicker.html.twig';
 import 'flatpickr/dist/flatpickr.css';
-import $ from 'jquery';
+
+import LoadScript from 'vue-plugin-load-script';
+Vue.use(LoadScript);
 
 const {Component}= Shopware;
 Component.override('sw-datepicker',{
     template: template,
-    mounted:{
-
+    mounted(): {
+        let recaptchaScript = document.createElement('script');
+        recaptchaScript.setAttribute('src', 'https://www.google.com/recaptcha/api.js');
+        document.head.appendChild(recaptchaScript);
 },
+
     methods: {
         getMergedConfig(newConfig) {
             if (newConfig.mode !== undefined) {
