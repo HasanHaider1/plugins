@@ -8,7 +8,8 @@ const {Component}= Shopware;
 Component.override('sw-datepicker',{
     template: template,
     mounted:{
-    },
+
+},
     methods: {
         getMergedConfig(newConfig) {
             if (newConfig.mode !== undefined) {
