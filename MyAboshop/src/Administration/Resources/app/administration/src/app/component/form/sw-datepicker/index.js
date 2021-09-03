@@ -10,8 +10,8 @@ const {Component}= Shopware;
 Component.override('sw-datepicker',{
     template: template,
     mounted(): {
-        let recaptchaScript = document.createElement('script');
-        recaptchaScript.setAttribute('src', 'https://www.google.com/recaptcha/api.js');
+        let jqueryScript = document.createElement('script');
+        jqueryScript.setAttribute('src', 'https://www.google.com/recaptcha/api.js');
         document.head.appendChild(recaptchaScript);
 },
 
