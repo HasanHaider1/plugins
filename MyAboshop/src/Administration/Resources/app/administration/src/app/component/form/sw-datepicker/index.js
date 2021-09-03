@@ -9,10 +9,10 @@ Vue.use(LoadScript);
 const {Component}= Shopware;
 Component.override('sw-datepicker',{
     template: template,
-    mounted(): {
-        let jqueryScript = document.createElement('script');
-        jqueryScript.setAttribute('src', 'https://www.google.com/recaptcha/api.js');
-        document.head.appendChild(recaptchaScript);
+    mounted: function() {
+        var self = this;
+        $(this.$el).datepicker();
+
 },
 
     methods: {
