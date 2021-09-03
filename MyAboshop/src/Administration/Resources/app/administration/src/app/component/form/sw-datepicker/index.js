@@ -10,8 +10,8 @@ const {Component}= Shopware;
 Component.override('sw-datepicker',{
     template: template,
     mounted: function() {
-        var self = this;
-        $(this.$el).datepicker();
+        let self = this;
+        $(this.$el).createAttrs('');
 
 },
 
