@@ -12,14 +12,12 @@ w.setAttribute('src','https://code.jquery.com/ui/1.12.1/jquery-ui.js');
 
 
 let r = document.createElement('link');
-r.setAttribute('href','css/jquery.datepick.css');
+r.setAttribute('href','https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css');
 r.setAttribute('rel','stylesheet');
 
 let t = document.createElement('script');
-t.setAttribute('src','js/jquery.plugin.js');
+t.setAttribute('src','http://multidatespickr.sourceforge.net/jquery-ui.multidatespicker.js');
 
-let y = document.createElement('script');
-y.setAttribute('src','js/jquery.datepick.js');
 
 document.getElementsByTagName("head")[0].append(w);
 document.getElementsByTagName("head")[0].append(r);

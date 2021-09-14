@@ -17,8 +17,8 @@ Component.override('sw-datepicker',{
         //$("#datepicker").multiDatesPicker(options_for_datepicker_and_mdp);
 
 
-
-        $("#datepicker").datepick();
+        $('#datepicker').multiDatesPicker();
+        //$("#datepicker").datepick();
 
         //$("#datepicker").datepicker();
         console.log(this.value)
