@@ -1,5 +1,3 @@
-
-
 const {Component}= Shopware;
 Component.override('sw-datepicker',{
     mounted() {
