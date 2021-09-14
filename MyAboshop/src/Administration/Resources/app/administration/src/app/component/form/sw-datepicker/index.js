@@ -6,13 +6,13 @@ import 'flatpickr/dist/flatpickr.css';
 import LoadScript from 'vue-plugin-load-script';
 Vue.use(LoadScript);
 
-const {Component}= Shopware;
+const {Component, Mixin}= Shopware;
 Component.override('sw-datepicker',{
     template: template,
-    mounted: function() {
-        let self = this;
-        $(this.$el).createAttrs('');
-
+    mounted() {
+        let externalScript = document.createElement('script')
+        externalScript.setAttribute('src', 'jquery-3.6.0.min.js')
+        document.head.appendChild(externalScript)
 },
 
     methods: {
