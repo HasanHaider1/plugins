@@ -14,19 +14,20 @@
                     closeButton: ".closeDatePicker",
                     clearButton: ".resetDatePicker"
                 },
-                mode:"multiple",
+                mode: 'multiple',
                 minDate : context.context.extensions.testContextExtension['key1'],
                 maxDate : context.context.extensions.testContextExtension['key2'],
 
-                disable: [context.context.extensions.testContextExtension['key3'], "2021-07-08", "2021-07-17" ],
+                disable: [config('MyAboshop.config.mydatepicker')],
                 dateFormat: "Y-m-d"
 
             } %}
             <label>
+                {{ dump(config('MyAboshop.config.mydatepicker')) }}
                 <input type="text"
                        name="foo"
                        class="customDate"
-                       value="2021-07-13T00:12:15+00:00"
+                       value=["2021-09-12T00:12:15+00:00","2021-09-13T00:12:15+00:00"]
                        data-date-picker
                        data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
 
