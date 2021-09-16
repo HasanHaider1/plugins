@@ -7,13 +7,9 @@
 
 
             {% set pickerProperties = {
+
                 locale: app.request.locale,
                 enableTime: false,
-                selectors: {
-                    openButton: ".openDatePicker",
-                    closeButton: ".closeDatePicker",
-                    clearButton: ".resetDatePicker"
-                },
                 mode: 'multiple',
                 minDate : context.context.extensions.testContextExtension['key1'],
                 maxDate : context.context.extensions.testContextExtension['key2'],
@@ -24,6 +20,13 @@
             } %}
             <label>
                 {{ dump(config('MyAboshop.config.mydatepicker')) }}
+                {{ dump(page.extensions.testPageExtension['key1']) }}
+                {% set myArray = [] %}
+                {% for i in  [config('MyAboshop.config.mydatepicker')] %}
+                    {% set myArray = myArray|merge([i]) %}
+
+                {% endfor %}
+                {{ dump(MyArray) }}
                 <input type="text"
                        name="foo"
                        class="customDate"
@@ -33,9 +36,6 @@
 
                 />
 
-                <button class="openDatePicker">Open</button>
-                <button class="closeDatePicker">Close</button>
-                <button class="resetDatePicker">Reset</button>
             </label>
 
         </div>

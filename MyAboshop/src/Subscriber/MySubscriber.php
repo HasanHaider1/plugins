@@ -37,18 +37,23 @@ class MySubscriber implements EventSubscriberInterface
         $configMinDate = $this->SystemConfig->get('MyAboshop.config.mindate');
         $configMaxDate = $this->SystemConfig->get('MyAboshop.config.maxdate');
         $configDisabledDate = $this->SystemConfig->get('MyAboshop.config.disableddate');
+        $configDisabledDates = $this->SystemConfig->get('MyAboshop.configmydatepicker');
 
         $array = ['key1' => $configMinDate,'key2' => $configMaxDate,'key3' => $configDisabledDate];
 
         $configfield1 = $this->SystemConfig->get('MyAboshop.config.fieldtype1');
         $configfield2 = $this->SystemConfig->get('MyAboshop.config.fieldtype2');
         $configfield3 = $this->SystemConfig->get('MyAboshop.config.fieldtype3');
-        $array2 = ['key1' => $configfield1,'key2' => $configfield2,'key3' => $configfield3];
-
+/*
+        foreach ($configDisabledDates as $value) {
+            echo "$value <br>";
+            array_push($array2,$value);
+        }
+*/
         //assign the array to the page
-        $event->getPage()->assign($array);
+        $event->getPage()->assign([$configDisabledDates]);
         //add the array to the page as an extension
-        $event->getPage()->addExtension('testPageExtension', new ArrayEntity($array));
+        $event->getPage()->addExtension('testPageExtension', new ArrayEntity([$configDisabledDates]));
 
         //assign the array to the context
         $event->getContext()->assign($array);
