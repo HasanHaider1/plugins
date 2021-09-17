@@ -37,7 +37,7 @@ class MySubscriber implements EventSubscriberInterface
         $configMinDate = $this->SystemConfig->get('MyAboshop.config.mindate');
         $configMaxDate = $this->SystemConfig->get('MyAboshop.config.maxdate');
         $configDisabledDate = $this->SystemConfig->get('MyAboshop.config.disableddate');
-        $configDisabledDates = $this->SystemConfig->get('MyAboshop.configmydatepicker');
+        $configDisabledDates = $this->SystemConfig->get('MyAboshop.config.mydatepicker');
 
         $array = ['key1' => $configMinDate,'key2' => $configMaxDate,'key3' => $configDisabledDate];
 

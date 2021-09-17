@@ -3,30 +3,21 @@
 {% block base_main_inner %}
     <div class="row">
         <div class="col-md-4" style="margin: 20px">
-
-
-
+            {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
             {% set pickerProperties = {
 
                 locale: app.request.locale,
                 enableTime: false,
                 mode: 'multiple',
+                conjunction: ',',
                 minDate : context.context.extensions.testContextExtension['key1'],
                 maxDate : context.context.extensions.testContextExtension['key2'],
-
-                disable: [config('MyAboshop.config.mydatepicker')],
+                disable: foo,
                 dateFormat: "Y-m-d"
 
             } %}
             <label>
-                {{ dump(config('MyAboshop.config.mydatepicker')) }}
-                {{ dump(page.extensions.testPageExtension['key1']) }}
-                {% set myArray = [] %}
-                {% for i in  [config('MyAboshop.config.mydatepicker')] %}
-                    {% set myArray = myArray|merge([i]) %}
 
-                {% endfor %}
-                {{ dump(MyArray) }}
                 <input type="text"
                        name="foo"
                        class="customDate"

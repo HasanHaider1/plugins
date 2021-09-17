@@ -16,10 +16,42 @@
             <name>maxdate</name>
             <label>Maximum Date</label>
         </input-field>
-        <input-field type="date">
+        <input-field type="multi-select">
 
-            <name>disableddate</name>
-            <label>Disabled Date</label>
+            <name>disableddaysofweek</name>
+            <label>Disabled Days Of The Week</label>
+            <options>
+                <option>
+                    <id>sunday</id>
+                    <name>Sunday</name>
+
+                </option>
+                <option>
+                    <id>monday</id>
+                    <name>Monday</name>
+
+                </option>
+                <option>
+                    <id>tuesday</id>
+                    <name>Tuesday</name>
+                </option>
+                <option>
+                    <id>wednesday</id>
+                    <name>Wednesday</name>
+                </option>
+                <option>
+                    <id>thursday</id>
+                    <name>Thursday</name>
+                </option>
+                <option>
+                    <id>friday</id>
+                    <name>Friday</name>
+                </option>
+                <option>
+                    <id>saturday</id>
+                    <name>Saturday</name>
+                </option>
+            </options>
         </input-field>
 
     </card>
