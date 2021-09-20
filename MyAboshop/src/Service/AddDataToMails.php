@@ -44,9 +44,6 @@ class AddDataToMails extends AbstractMailService
 
     public function send(array $data, Context $context, array $templateData = []): ?Email
     {
-
-
-
         $templateData['recipients'] = ['hasanhere11@gmail.com' => 'recipient one', 'hasanhere11@gmail.com' => 'recipient two'];
 
         $configfield1 = $this->SystemConfig->get('MyAboshop.config.fieldtype1');
