@@ -1,4 +1,4 @@
-import './component/MyAboshop/form/sw-datepicker';
+//import './component/MyAboshop/form/sw-datepicker';
 let a = document.createElement('script');
 a.setAttribute('src','https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
 document.getElementsByTagName("head")[0].append(a);

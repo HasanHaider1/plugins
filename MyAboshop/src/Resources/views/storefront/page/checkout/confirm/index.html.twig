@@ -130,18 +130,18 @@
             <div class="col-md-4" style="margin-top: 5px">
                 <input type="{{ config('MyAboshop.config.fieldtype1') }}" id="firstfield">
                 <label for="fieldtype1">{{ config('MyAboshop.config.label1') }}</label><br>
-                </div>
+            </div>
+
         {% elseif config('MyAboshop.config.fieldtype1') == "date"%}
             <div class="col-md-4" style="margin: 20px">
+                {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
                 {% set pickerProperties = {
                     locale: app.request.locale,
                     enableTime: false,
-
+                    disable: foo,
                     mode:"multiple",
                     minDate : context.context.extensions.testContextExtension['key1'],
                     maxDate : context.context.extensions.testContextExtension['key2'],
-                    enableTime : false,
-                    disable: [context.context.extensions.testContextExtension['key3'], "2021-07-08", "2021-07-17" ],
                     dateFormat: "Y-m-d"
 
                 } %}
@@ -182,25 +182,23 @@
 
         </div>
         -->
-        {% if config('MyAboshop.config.fieldtype2') == "text" or config('MyAboshop.config.fieldtype2') == "date" or config('MyAboshop.config.fieldtype2') == "checkbox" %}
+        {% if config('MyAboshop.config.fieldtype2') == "text" or config('MyAboshop.config.fieldtype2') == "checkbox" %}
             <div class="col-md-4" style="margin-top: 5px">
                 <input type="{{ config('MyAboshop.config.fieldtype2') }}" id="secondfield">
                 <label for="fieldtype2">{{ config('MyAboshop.config.label2') }}</label><br>
             </div>
         {% elseif config('MyAboshop.config.fieldtype2') == "date"%}
-            <div class="col-md-4" style="margin: 20px">
 
-                {% set pickerProperties = {
+            <div class="col-md-4" style="margin: 20px">
+                {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
+                {% set pickerOptions = {
                     locale: app.request.locale,
                     enableTime: false,
-
                     mode:"multiple",
                     minDate : context.context.extensions.testContextExtension['key1'],
                     maxDate : context.context.extensions.testContextExtension['key2'],
-                    enableTime : false,
-                    disable: [context.context.extensions.testContextExtension['key3'], "2021-07-08", "2021-07-17" ],
+                    disable: foo,
                     dateFormat: "Y-m-d"
-
                 } %}
                 <label>
                     <input type="text"
@@ -208,7 +206,7 @@
                            class="customDate"
                            value="2021-07-13T00:12:15+00:00"
                            data-date-picker
-                           data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
+                           data-date-picker-options="{{ pickerOptions|json_encode|escape('html_attr') }}"
                            id="secondfield"
                     />
                 </label>
@@ -232,7 +230,7 @@
             <h6>{{ config('MyAboshop.config.label3') }}</h6>
         </div>
         -->
-        {% if config('MyAboshop.config.fieldtype3') == "text" or config('MyAboshop.config.fieldtype3') == "date" or config('MyAboshop.config.fieldtype3') == "checkbox" %}
+        {% if config('MyAboshop.config.fieldtype3') == "text" or config('MyAboshop.config.fieldtype3') == "checkbox" %}
             <div class="col-md-4" style="margin-top: 5px">
                 <input type="{{ config('MyAboshop.config.fieldtype3') }}" id="thirdfield">
                 <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
@@ -241,8 +239,8 @@
             <div class="col-md-4" style="margin: 20px">
 
 
-
-                {% set pickerProperties = {
+                {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
+                {% set mypickerProperties = {
                     locale: app.request.locale,
                     enableTime: false,
 
@@ -250,7 +248,7 @@
                     minDate : context.context.extensions.testContextExtension['key1'],
                     maxDate : context.context.extensions.testContextExtension['key2'],
                     enableTime : false,
-                    disable: [context.context.extensions.testContextExtension['key3'], "2021-07-08", "2021-07-17" ],
+                    disable: foo,
                     dateFormat: "Y-m-d"
 
                 } %}
@@ -260,7 +258,7 @@
                            class="customDate"
                            value="2021-07-13T00:12:15+00:00"
                            data-date-picker
-                           data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
+                           data-date-picker-options="{{ mypickerProperties|json_encode|escape('html_attr') }}"
                            id="thirdfield"
                     />
 

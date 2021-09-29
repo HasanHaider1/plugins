@@ -14,5 +14,10 @@
             <argument type="service" id="MyAboshop\Service\AddDataToMails.inner" />
             <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
         </service>
+
+        <service id="MyAboshop\Core\Content\CustomOrder\CustomOrderDefinition">
+            <tag name="shopware.entity.definition" entity="myaboshop_customorder" />
+        </service>
+
     </services>
 </container>
