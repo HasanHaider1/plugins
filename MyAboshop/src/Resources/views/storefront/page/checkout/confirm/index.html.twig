@@ -135,6 +135,7 @@
         {% elseif config('MyAboshop.config.fieldtype1') == "date"%}
             <div class="col-md-4" style="margin: 20px">
                 {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
+
                 {% set pickerProperties = {
                     locale: app.request.locale,
                     enableTime: false,
@@ -144,12 +145,13 @@
                     maxDate : context.context.extensions.testContextExtension['key2'],
                     dateFormat: "Y-m-d"
 
-                } %}
+                }%}
+
                 <label>
                     <input type="text"
                            name="firstfield"
                            class="customDate"
-                           value="2021-07-13T00:12:15+00:00"
+                           value="today"
                            data-date-picker
                            data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
                            id="firstfield"

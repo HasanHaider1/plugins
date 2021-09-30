@@ -29,5 +29,7 @@ class CustomOrderDefinition extends EntityDefinition
 
             new CustomFields()
         ]);
+
     }
+
 }
