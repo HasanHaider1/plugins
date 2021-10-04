@@ -135,7 +135,7 @@
         {% elseif config('MyAboshop.config.fieldtype1') == "date"%}
             <div class="col-md-4" style="margin: 20px">
                 {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
-
+                {% set foo = foo|merge(["2021-09-13","2021-09-14","today"]) %}
                 {% set pickerProperties = {
                     locale: app.request.locale,
                     enableTime: false,
@@ -151,7 +151,7 @@
                     <input type="text"
                            name="firstfield"
                            class="customDate"
-                           value="today"
+
                            data-date-picker
                            data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
                            id="firstfield"
@@ -193,6 +193,7 @@
 
             <div class="col-md-4" style="margin: 20px">
                 {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
+                {% set foo = foo|merge(["2021-09-13","2021-09-14","today"]) %}
                 {% set pickerOptions = {
                     locale: app.request.locale,
                     enableTime: false,
@@ -206,7 +207,6 @@
                     <input type="text"
                            name="secondfield"
                            class="customDate"
-                           value="2021-07-13T00:12:15+00:00"
                            data-date-picker
                            data-date-picker-options="{{ pickerOptions|json_encode|escape('html_attr') }}"
                            id="secondfield"
@@ -242,6 +242,7 @@
 
 
                 {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
+                {% set foo = foo|merge(["2021-09-13","2021-09-14","today"]) %}
                 {% set mypickerProperties = {
                     locale: app.request.locale,
                     enableTime: false,
@@ -258,7 +259,6 @@
                     <input type="text"
                            name="thirdfield"
                            class="customDate"
-                           value="2021-07-13T00:12:15+00:00"
                            data-date-picker
                            data-date-picker-options="{{ mypickerProperties|json_encode|escape('html_attr') }}"
                            id="thirdfield"
