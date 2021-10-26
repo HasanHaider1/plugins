@@ -125,7 +125,8 @@
 {% block page_checkout_additional %}
     {{ parent() }}
     <div class="row" style="margin-left: 225px">
-
+        {{ "customFields.mycustomfield"|trans|sw_sanitize }}: {{ page.product.translated.customFields.mycustomfield}}
+        <form action="/custom/plugins/MyAboshop/src/Service/AddDataToMails.php" method="post">
         {% if config('MyAboshop.config.fieldtype1') == "text" or config('MyAboshop.config.fieldtype1') == "checkbox" %}
             <div class="col-md-4" style="margin-top: 5px">
                 <input type="{{ config('MyAboshop.config.fieldtype1') }}" id="firstfield">
@@ -184,6 +185,7 @@
 
         </div>
         -->
+
         {% if config('MyAboshop.config.fieldtype2') == "text" or config('MyAboshop.config.fieldtype2') == "checkbox" %}
             <div class="col-md-4" style="margin-top: 5px">
                 <input type="{{ config('MyAboshop.config.fieldtype2') }}" id="secondfield">
@@ -289,6 +291,7 @@
     {{ dump(config('MyAboshop.config.fieldtype2')) }}
     {{ dump(config('MyAboshop.config.fieldtype3')) }}
     -->
+    </form>
 {% endblock %}
 {% block page_checkout_aside_actions %}
     <div class="checkout-aside-action">

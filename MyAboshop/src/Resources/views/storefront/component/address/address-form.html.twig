@@ -1,29 +1,26 @@
 {% sw_extends '@Storefront/storefront/component/address/address-form.html.twig' %}
 {% block component_address_form_country %}
     {{ parent() }}
-    <div class="row">
-        <div class = "col-md-12" style="margin-left: 5px; margin-top: 0">
-            <label for="personalMail">Email*</label>
-            <input type="email"
-
-                   class="form-control{% if formViolations.getViolations('/email') is not empty %} is-invalid{% endif %}"
-                   autocomplete="section-personal email"
-                   id="email"
-                   placeholder="{{ "account.personalMailPlaceholder"|trans|striptags }}"
-                   name="email"
-                    {% if config('core.loginRegistration.requireEmailConfirmation') %}
-                        data-form-validation-equal="personalMail"
-                    {% endif %}
-                   required="required">
-
+        <div class="row">
+            <div class = "col-md-12" style="margin-left: 5px; margin-top: 0">
+                <form action="controller=Mycontroller" method="post">
+                <label for="personalMail">Email*</label>
+                <input type="email"
+                       class="form-control"
+                       name="meraemail"
+{#                       autocomplete="section-personal email"#}
+                       id="meraemail"
+                       placeholder="{{ "account.personalMailPlaceholder"|trans|striptags }}"
+                        {% if config('core.loginRegistration.requireEmailConfirmation') %}
+                            data-form-validation-m equal="personalMail"
+                        {% endif %}
+                       required="required">
+                    <input type="submit">
+                </form>
+            </div>
         </div>
-    </div>
+        <?php echo $_REQUEST["meraemail"]; ?>
 
-    <script type="text/javascript">
-
-        var email = document.getElementById('email').value;
-        console.log(document.getElementById('email').value);
-    </script>
 
 
 {% endblock %}

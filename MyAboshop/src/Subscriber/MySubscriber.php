@@ -32,7 +32,7 @@ class MySubscriber implements EventSubscriberInterface
     {
         // Do something
         // E.g. work with the loaded entities: $event->getEntities()
-
+        $event->getInput();
         $something = $this->SystemConfig->get('Hello');
         $configMinDate = $this->SystemConfig->get('MyAboshop.config.mindate');
         $configMaxDate = $this->SystemConfig->get('MyAboshop.config.maxdate');
