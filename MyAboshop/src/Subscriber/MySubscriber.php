@@ -13,6 +13,7 @@ class MySubscriber implements EventSubscriberInterface
 {
     protected $SystemConfig;
     public $me;
+
     public function __construct(SystemConfigService $SystemConfig)
     {
         $this->SystemConfig = $SystemConfig;
@@ -25,6 +26,7 @@ class MySubscriber implements EventSubscriberInterface
         // Return the events to listen to as array like this:  <event to listen to> => <method to execute>
         return [
             GenericPageLoadedEvent::class => 'onPageLoaded'
+
         ];
     }
 
@@ -32,7 +34,8 @@ class MySubscriber implements EventSubscriberInterface
     {
         // Do something
         // E.g. work with the loaded entities: $event->getEntities()
-        $event->getInput();
+        //$_POST('meraemail');
+        //$event->getInput();
         $something = $this->SystemConfig->get('Hello');
         $configMinDate = $this->SystemConfig->get('MyAboshop.config.mindate');
         $configMaxDate = $this->SystemConfig->get('MyAboshop.config.maxdate');
