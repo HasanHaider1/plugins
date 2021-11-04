@@ -12,11 +12,12 @@
 
                 locale: app.request.locale,
                 enableTime: false,
-                mode: 'single',
+                mode: 'multiple',
                 conjunction: ',',
                 minDate : context.context.extensions.testContextExtension['key1'],
                 maxDate : context.context.extensions.testContextExtension['key2'],
                 disable: foo,
+                dateType:"date",
                 dateFormat: "Y-m-d"
 
             } %}
@@ -26,6 +27,7 @@
                        class="customDate"
                        value=["2021-09-12T00:12:15+00:00","2021-09-13T00:12:15+00:00"]
                        id="loo"
+
                        data-date-picker
                        data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
 
