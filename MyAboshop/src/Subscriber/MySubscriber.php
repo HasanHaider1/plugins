@@ -2,20 +2,23 @@
 
 namespace MyAboshop\Subscriber;
 
+
 use Shopware\Storefront\Page\GenericPageLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Shopware\Core\Framework\Struct\ArrayEntity;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
-
+use Symfony\Component\HttpFoundation\RequestStack;
 
 
 class MySubscriber implements EventSubscriberInterface
 {
     protected $SystemConfig;
     public $me;
+    private $requestStack;
 
-    public function __construct(SystemConfigService $SystemConfig)
+    public function __construct(  RequestStack $requestStack, SystemConfigService $SystemConfig)
     {
+        $this->requestStack = $requestStack;
         $this->SystemConfig = $SystemConfig;
 
     }
@@ -36,6 +39,13 @@ class MySubscriber implements EventSubscriberInterface
         // E.g. work with the loaded entities: $event->getEntities()
         //$_POST('meraemail');
         //$event->getInput();
+        $request = $this->requestStack->getCurrentRequest();
+        //$test = $request->get('meraemail');
+        //$value=$request->query->get('meraemail');
+        //$value=$request->get('users');
+        //console.log($value);
+        //echo $value;
+
         $something = $this->SystemConfig->get('Hello');
         $configMinDate = $this->SystemConfig->get('MyAboshop.config.mindate');
         $configMaxDate = $this->SystemConfig->get('MyAboshop.config.maxdate');

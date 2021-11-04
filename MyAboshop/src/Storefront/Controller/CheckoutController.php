@@ -13,9 +13,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
-use MyAboshop\Storefront\Controller\CheckoutController\debug;
 
-function mydebug($data) {
+
+
+function debug($data) {
     $output = $data;
     if (is_array($output))
         $output = implode(',', $output);
@@ -25,36 +26,22 @@ function mydebug($data) {
 /**
  * @RouteScope(scopes={"storefront"})
  */
-Class ExampleController extends StorefrontController{
+Class CheckoutController extends StorefrontController{
 
     private  $userFirstName = "Hasan";
     private $users="mai";
     private $userNotifications = ['done', 'not done'];
+
+
     /**
      * @HttpCache
-     * @Route ("/testpage" , name="frontend.mycontroller" , defaults={"csrf_protected"=false},methods={"GET","POST"})
+     * @Route ("/address" , name="frontend.address.address" ,defaults={"csrf_protected"=false},methods={"GET","POST"})
      */
+
     public function index(Request $request): Response{
 
-        $value=$request->request->get('users');
-        mydebug($value);
-        return $this->renderStorefront("@MyAboshop/storefront/page/example.html.twig",['user_first_name'=>$this->userFirstName,
-            'notifications'=>$this->userNotifications, 'users'=>$this->users,]);
-    }
-    /*
-    /**
-     * @HttpCache
-     * @Route ("/example" , name="frontend.example.example" ,methods={"GET"})
-     */
-    /*
-    public function newFunc(Request $request): Response{
-
-        $value=$request->query->get('users');
+        $value=$request->get('user');
         debug($value);
-        return $this->renderStorefront("@MyAboshop/storefront/content/index.html.twig",['user_first_name'=>$this->userFirstName,
-            'notifications'=>$this->userNotifications, 'users'=>$this->users,]);
+        return $this->renderStorefront("@MyAboshop/storefront/component/address/address-form.html.twig");
     }
-    */
-
-
 }

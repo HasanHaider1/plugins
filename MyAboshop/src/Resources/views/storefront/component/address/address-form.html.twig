@@ -3,7 +3,7 @@
     {{ parent() }}
         <div class="row">
             <div class = "col-md-12" style="margin-left: 5px; margin-top: 0">
-                <form action="controller=Mycontroller" method="post">
+                <form action="{{ path('frontend.address.address') }}" method="post">
                 <label for="personalMail">Email*</label>
                 <input type="email"
                        class="form-control"
@@ -15,6 +15,7 @@
                             data-form-validation-m equal="personalMail"
                         {% endif %}
                        required="required">
+                    <input type="submit">
                 </form>
             </div>
         </div>

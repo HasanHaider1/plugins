@@ -5,8 +5,11 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+
         <service id="MyAboshop\Subscriber\MySubscriber">
+            <argument type="service" id="Symfony\Component\HttpFoundation\RequestStack"/>
             <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+
             <tag name="kernel.event_subscriber"/>
         </service>
 
@@ -14,12 +17,19 @@
             <argument type="service" id="MyAboshop\Service\AddDataToMails.inner" />
             <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
         </service>
-        <service id="MyAboshop\Storefront\Controller\ExampleController" public="true">
+      <service id="MyAboshop\Storefront\Controller\ExampleController" public="true">
             <call method="setContainer">
                 <argument type="service" id="service_container"/>
+
             </call>
         </service>
 
+        <service id="MyAboshop\Storefront\Controller\CheckoutController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+            <tag>controller.service_arguments</tag>
+        </service>
         <!--
         <service id="MyAboshop\Core\Content\CustomOrder\CustomOrderDefinition">
             <tag name="shopware.entity.definition" entity="myaboshop_customorder" />

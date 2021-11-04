@@ -1,0 +1,51 @@
+ <div data-gb-custom-block data-tag="sw_extends" data-0='@Storefront/storefront/base.html.twig'>
+
+    <div data-gb-custom-block data-tag="block">
+        <h1>TEST PAGE</h1>
+        <h2>Hello {{ user_first_name }}!</h2>
+        <p>You have {{ notifications|length }} new notifications.</p>
+        <form action="{{ path('frontend.mycontroller') }}" method="get">
+            <select name="users">
+                <option selected="">Which users to you want to see ?</option>
+                <option value="1">All</option>
+                <option value="2">Students</option>
+                <option value="3">Teachers</option>
+                <option value="4">Admins</option>
+                <option value="5">Super Admin</option>
+                <option value="6">Banned</option>
+                <option value="7" selected="selected">Unbanned</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+        <p>{{ users }}</p>
+
+    </div>
+</div>
+ <div>
+     {% set pickerProperties = {
+
+         locale: app.request.locale,
+         enableTime: false,
+         mode: 'multiple',
+         conjunction: ',',
+         minDate : context.context.extensions.testContextExtension['key1'],
+         maxDate : context.context.extensions.testContextExtension['key2'],
+         disable: foo,
+         dateFormat: "Y-m-d"
+
+     } %}
+     <label>
+         <input type="text"
+                name="foo"
+                class="customDate"
+                value=["2021-09-12T00:12:15+00:00","2021-09-13T00:12:15+00:00"]
+                data-date-picker
+                data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
+
+         />
+
+     </label>
+
+
+ </div>
+ {{ dump(context.context) }}

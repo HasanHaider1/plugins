@@ -3,6 +3,10 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Date Picker Configuration</title>
+        <input-field type="bool">
+            <name>ismultiple</name>
+            <label>Allow multiple dates selection?</label>
+        </input-field>
         <component name="sw-datepicker">
             <name>mydatepicker</name>
             <label>Disabled Dates:</label>
@@ -186,7 +190,10 @@
             </option>
         </options>
     </input-field>
-
+    <input-field type="int">
+            <name>disableddaysfromtoday</name>
+            <label>Disable how many days from today?</label>
+    </input-field>
     </card>
     <card>
         <title>Product Checkout Page</title>

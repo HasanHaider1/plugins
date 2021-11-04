@@ -124,174 +124,177 @@
 
 {% block page_checkout_additional %}
     {{ parent() }}
+    {{ dump(context.context) }}
     <div class="row" style="margin-left: 225px">
-        {{ "customFields.mycustomfield"|trans|sw_sanitize }}: {{ page.product.translated.customFields.mycustomfield}}
-        <form action="/custom/plugins/MyAboshop/src/Service/AddDataToMails.php" method="post">
-        {% if config('MyAboshop.config.fieldtype1') == "text" or config('MyAboshop.config.fieldtype1') == "checkbox" %}
-            <div class="col-md-4" style="margin-top: 5px">
-                <input type="{{ config('MyAboshop.config.fieldtype1') }}" id="firstfield">
-                <label for="fieldtype1">{{ config('MyAboshop.config.label1') }}</label><br>
-            </div>
+        <!--{{ "customFields.mycustomfield"|trans|sw_sanitize }}: {{ page.product.translated.customFields.mycustomfield}}-->
+        <form action="#" method="get">
+                {% if config('MyAboshop.config.fieldtype1') == "text" or config('MyAboshop.config.fieldtype1') == "checkbox" %}
+                    <div class="col-md-4" style="margin-top: 5px">
+                        <input type="{{ config('MyAboshop.config.fieldtype1') }}" id="firstfield">
+                        <label for="fieldtype1">{{ config('MyAboshop.config.label1') }}</label><br>
+                    </div>
 
-        {% elseif config('MyAboshop.config.fieldtype1') == "date"%}
-            <div class="col-md-4" style="margin: 20px">
-                {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
-                {% set foo = foo|merge(["2021-09-13","2021-09-14","today"]) %}
-                {% set pickerProperties = {
-                    locale: app.request.locale,
-                    enableTime: false,
-                    disable: foo,
-                    mode:"multiple",
-                    minDate : context.context.extensions.testContextExtension['key1'],
-                    maxDate : context.context.extensions.testContextExtension['key2'],
-                    dateFormat: "Y-m-d"
+                {% elseif config('MyAboshop.config.fieldtype1') == "date"%}
+                    <div class="col-md-4" style="margin: 20px">
+                        {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
+                        {% set foo = foo|merge(["2021-09-13","2021-09-14","today"]) %}
+                        {% set pickerProperties = {
+                            locale: app.request.locale,
+                            enableTime: false,
+                            disable: foo,
+                            mode:"multiple",
+                            minDate : context.context.extensions.testContextExtension['key1'],
+                            maxDate : context.context.extensions.testContextExtension['key2'],
+                            dateFormat: "Y-m-d"
 
-                }%}
+                        }%}
 
-                <label>
-                    <input type="text"
-                           name="firstfield"
-                           class="customDate"
+                        <label>
+                            <input type="text"
+                                   name="firstfield"
+                                   class="customDate"
 
-                           data-date-picker
-                           data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
-                           id="firstfield"
-                    />
-                </label>
-                <label for="fieldtype1">{{ config('MyAboshop.config.label1') }}</label><br>
+                                   data-date-picker
+                                   data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
+                                   id="firstfield"
+                            />
+                        </label>
+                        <label for="fieldtype1">{{ config('MyAboshop.config.label1') }}</label><br>
 
-            </div>
-        {% else %}
-            <div class="col-md-4" style="margin-top: 5px">
-                <select name="firstfield" id="firstfield"  >
-                    <option value="" disabled selected>Select your option</option>
-                    {% for i in config('MyAboshop.config.textarea1') |split('\n') %}
-                        <option value="{{ i }}">{{ i }}</option>
-                    {% endfor %}
-                </select>
-                <label for="fieldtype1">{{ config('MyAboshop.config.label1') }}</label><br>
-            </div>
-        {% endif %}
-        <!--
-        <div class="col-md-12" style="margin-top: 5px">
+                    </div>
+                {% else %}
+                    <div class="col-md-4" style="margin-top: 5px">
+                        <select name="firstfield" id="firstfield"  >
+                            <option value="" disabled selected>Select your option</option>
+                            {% for i in config('MyAboshop.config.textarea1') |split('\n') %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="fieldtype1">{{ config('MyAboshop.config.label1') }}</label><br>
+                    </div>
+                {% endif %}
+                <!--
+                <div class="col-md-12" style="margin-top: 5px">
 
-            <p>{{ config('MyAboshop.config.label1') }}</p>
-        </div>
-        -->
-        <!--
-        <div class="col-md-12" style="margin-top: 5px">
+                    <p>{{ config('MyAboshop.config.label1') }}</p>
+                </div>
+                -->
+                <!--
+                <div class="col-md-12" style="margin-top: 5px">
 
-            <h6>{{ config('MyAboshop.config.label2') }}</h6>
+                    <h6>{{ config('MyAboshop.config.label2') }}</h6>
 
-        </div>
-        -->
+                </div>
+                -->
 
-        {% if config('MyAboshop.config.fieldtype2') == "text" or config('MyAboshop.config.fieldtype2') == "checkbox" %}
-            <div class="col-md-4" style="margin-top: 5px">
-                <input type="{{ config('MyAboshop.config.fieldtype2') }}" id="secondfield">
-                <label for="fieldtype2">{{ config('MyAboshop.config.label2') }}</label><br>
-            </div>
-        {% elseif config('MyAboshop.config.fieldtype2') == "date"%}
+                {% if config('MyAboshop.config.fieldtype2') == "text" or config('MyAboshop.config.fieldtype2') == "checkbox" %}
+                    <div class="col-md-4" style="margin-top: 5px">
+                        <input type="{{ config('MyAboshop.config.fieldtype2') }}" id="secondfield">
+                        <label for="fieldtype2">{{ config('MyAboshop.config.label2') }}</label><br>
+                    </div>
+                {% elseif config('MyAboshop.config.fieldtype2') == "date"%}
 
-            <div class="col-md-4" style="margin: 20px">
-                {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
-                {% set foo = foo|merge(["2021-09-13","2021-09-14","today"]) %}
-                {% set pickerOptions = {
-                    locale: app.request.locale,
-                    enableTime: false,
-                    mode:"multiple",
-                    minDate : context.context.extensions.testContextExtension['key1'],
-                    maxDate : context.context.extensions.testContextExtension['key2'],
-                    disable: foo,
-                    dateFormat: "Y-m-d"
-                } %}
-                <label>
-                    <input type="text"
-                           name="secondfield"
-                           class="customDate"
-                           data-date-picker
-                           data-date-picker-options="{{ pickerOptions|json_encode|escape('html_attr') }}"
-                           id="secondfield"
-                    />
-                </label>
-                <label for="fieldtype2">{{ config('MyAboshop.config.label2') }}</label><br>
+                    <div class="col-md-4" style="margin: 20px">
+                        {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
+                        {% set foo = foo|merge(["2021-09-13","2021-09-14","today"]) %}
+                        {% set pickerOptions = {
+                            locale: app.request.locale,
+                            enableTime: false,
+                            mode:"multiple",
+                            minDate : context.context.extensions.testContextExtension['key1'],
+                            maxDate : context.context.extensions.testContextExtension['key2'],
+                            disable: foo,
+                            dateFormat: "Y-m-d"
+                        } %}
+                        <label>
+                            <input type="text"
+                                   name="secondfield"
+                                   class="customDate"
+                                   data-date-picker
+                                   data-date-picker-options="{{ pickerOptions|json_encode|escape('html_attr') }}"
+                                   id="secondfield"
+                            />
+                        </label>
+                        <label for="fieldtype2">{{ config('MyAboshop.config.label2') }}</label><br>
 
-            </div>
-        {% else %}
-            <div class="col-md-4" style="margin-top: 5px">
-                <select name="secondfield" id="secondfield" >
-                    <option value="" disabled selected>Select your option</option>
-                    {% for i in config('MyAboshop.config.textarea2') |split('\n') %}
-                        <option value="{{ i }}">{{ i }}</option>
-                    {% endfor %}
-                </select>
-                <label for="fieldtype2">{{ config('MyAboshop.config.label2') }}</label><br>
-            </div>
-        {% endif %}
-        <!--
-        <div class="col-md-12" style="margin-top: 5px">
+                    </div>
+                {% else %}
+                    <div class="col-md-4" style="margin-top: 5px">
+                        <select name="secondfield" id="secondfield" >
+                            <option value="" disabled selected>Select your option</option>
+                            {% for i in config('MyAboshop.config.textarea2') |split('\n') %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="fieldtype2">{{ config('MyAboshop.config.label2') }}</label><br>
+                    </div>
+                {% endif %}
+                <!--
+                <div class="col-md-12" style="margin-top: 5px">
 
-            <h6>{{ config('MyAboshop.config.label3') }}</h6>
-        </div>
-        -->
-        {% if config('MyAboshop.config.fieldtype3') == "text" or config('MyAboshop.config.fieldtype3') == "checkbox" %}
-            <div class="col-md-4" style="margin-top: 5px">
-                <input type="{{ config('MyAboshop.config.fieldtype3') }}" id="thirdfield">
-                <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
-            </div>
-        {% elseif config('MyAboshop.config.fieldtype3') == "date"%}
-            <div class="col-md-4" style="margin: 20px">
-
-
-                {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
-                {% set foo = foo|merge(["2021-09-13","2021-09-14","today"]) %}
-                {% set mypickerProperties = {
-                    locale: app.request.locale,
-                    enableTime: false,
-
-                    mode:"multiple",
-                    minDate : context.context.extensions.testContextExtension['key1'],
-                    maxDate : context.context.extensions.testContextExtension['key2'],
-                    enableTime : false,
-                    disable: foo,
-                    dateFormat: "Y-m-d"
-
-                } %}
-                <label>
-                    <input type="text"
-                           name="thirdfield"
-                           class="customDate"
-                           data-date-picker
-                           data-date-picker-options="{{ mypickerProperties|json_encode|escape('html_attr') }}"
-                           id="thirdfield"
-                    />
-
-                </label>
-                <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
-
-            </div>
-        {% else %}
-            <div class="col-md-4" style="margin-top: 5px">
-                <select name="thirdfield" id="thirdfield" >
-                    <option value="" disabled selected>Select your option</option>
-                    {% for i in config('MyAboshop.config.textarea3') |split('\n') %}
-                        <option value="{{ i }}">{{ i }}</option>
-                    {% endfor %}
-                </select>
-                <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
-            </div>
+                    <h6>{{ config('MyAboshop.config.label3') }}</h6>
+                </div>
+                -->
+                {% if config('MyAboshop.config.fieldtype3') == "text" or config('MyAboshop.config.fieldtype3') == "checkbox" %}
+                    <div class="col-md-4" style="margin-top: 5px">
+                        <input type="{{ config('MyAboshop.config.fieldtype3') }}" id="thirdfield">
+                        <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
+                    </div>
+                {% elseif config('MyAboshop.config.fieldtype3') == "date"%}
+                    <div class="col-md-4" style="margin: 20px">
 
 
+                        {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
+                        {% set foo = foo|merge(["2021-09-13","2021-09-14","today"]) %}
+                        {% set mypickerProperties = {
+                            locale: app.request.locale,
+                            enableTime: false,
+
+                            mode:"multiple",
+                            minDate : context.context.extensions.testContextExtension['key1'],
+                            maxDate : context.context.extensions.testContextExtension['key2'],
+                            enableTime : false,
+                            disable: foo,
+                            dateFormat: "Y-m-d"
+
+                        } %}
+                        <label>
+                            <input type="text"
+                                   name="thirdfield"
+                                   class="customDate"
+                                   data-date-picker
+                                   data-date-picker-options="{{ mypickerProperties|json_encode|escape('html_attr') }}"
+                                   id="thirdfield"
+                            />
+
+                        </label>
+                        <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
+
+                    </div>
+                {% else %}
+                    <div class="col-md-4" style="margin-top: 5px">
+                        <select name="thirdfield" id="thirdfield" >
+                            <option value="" disabled selected>Select your option</option>
+                            {% for i in config('MyAboshop.config.textarea3') |split('\n') %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="fieldtype3">{{ config('MyAboshop.config.label3') }}</label><br>
+                    </div>
 
 
-        {% endif %}
+
+
+                {% endif %}
+            <input type="submit">
+        </form>
     </div>
-    <!--
-    {{ dump(config('MyAboshop.config.fieldtype1')) }}
-    {{ dump(config('MyAboshop.config.fieldtype2')) }}
-    {{ dump(config('MyAboshop.config.fieldtype3')) }}
-    -->
-    </form>
+            <!--
+            {{ dump(config('MyAboshop.config.fieldtype1')) }}
+            {{ dump(config('MyAboshop.config.fieldtype2')) }}
+            {{ dump(config('MyAboshop.config.fieldtype3')) }}
+            -->
+
 {% endblock %}
 {% block page_checkout_aside_actions %}
     <div class="checkout-aside-action">
