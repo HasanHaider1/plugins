@@ -8,11 +8,11 @@
     {% endif %}
     {{  dump(ans) }}
     <div class="row">
-        {{ dump(context.context) }}
+
         <div class="col-md-4" style="margin: 20px">
             {% set foo = config('MyAboshop.config.mydatepicker')|split(',') %}
-            {% set bar = "{{dateOfMonth}}" %}
-            {% set doe = "{{ dayOfWeek }}" %}
+            {% set bar = "{{dateOfMonth()}}" %}
+            {% set doe = "{{ dayOfWeek() }}" %}
             {{ dump(doe) }}
             {% set pickerProperties =
             {
@@ -30,11 +30,12 @@
                 <input type="text"
                        name="customDate"
                        class="customDate"
-                       value=["2021-09-12T00:12:15+00:00","2021-09-13T00:12:15+00:00"]
+                       value=["2021-12-12T00:12:15+00:00","2021-11-13T00:12:15+00:00"]
                        id="loo"
                        data-date-picker
                        data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
-                       v-on:click="dayOfWeek(Date())"
+                       data-id="dayOfWeek"
+                       v-on:click="dayOfWeek()"
                 />
                 <button  id="example-3" v-on:click = "say(Date())">My test Button</button>
             </label>
