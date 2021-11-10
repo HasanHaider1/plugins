@@ -27,17 +27,23 @@
 
             } %}
             <label>
+                <script>
+                    var a = new Date();
+                </script>
                 <input type="text"
+
                        name="customDate"
                        class="customDate"
                        value=["2021-12-12T00:12:15+00:00","2021-11-13T00:12:15+00:00"]
-                       id="loo"
+                       id="example-3"
+                       v-on:load="myfunc(this)"
                        data-date-picker
                        data-date-picker-options="{{ pickerProperties|json_encode|escape('html_attr') }}"
                        data-id="dayOfWeek"
                        v-on:click="dayOfWeek()"
+
                 />
-                <button  id="example-3" v-on:click = "say(Date())">My test Button</button>
+                <button  id="loo"  v-on:click = "myfunc(this)">My test Button</button>
             </label>
 
         </div>
@@ -48,7 +54,7 @@
             /in/.test(document.readyState) ? setTimeout('ready(' + f + ')', 9) : f();
         }
 
-        let btn = document.getElementById("btn");
+        //let btn = document.getElementById("btn");
         new Vue({
             el: '#example-3',
             methods: {
@@ -60,27 +66,43 @@
                 },
                 dateOfMonth: function(date){
                     return (date.getDate() === 3 || date.getDate() === 5);
+                },
+                myfunc(obj){
+                    alert("obj")
+                    console.log(obj);
                 }
 
             }
         });
+
         new Vue({
             el: '#loo',
+
             methods: {
                 say: function (message) {
                     alert(message)
                 },
-                dayOfWeek: function(date){
-                    return (date.getDay() === 0 || date.getDay() === 6);
+                dayOfWeek: function(){
+                    return (a.getDay() === 0 || date.getDay() === 6);
                 },
                 dateOfMonth: function(date){
                     return (date.getDate() === 3 || date.getDate() === 5);
                 },
                 daysFromNow: function (number){
                     return new Date().fp_incr(number)
-                }
+                },
+                myfunc(obj){
+                    alert("")
+                    console.log(obj);
+                },
+            },
+            openDatepicker: function (selectedDates){},
+            onOpen:function(selectedDates, dateStr, instance){
+                    console.log(selectedDates)
+                        //...
+                    }
 
-            }
+
         })
         //btn.addEventListener("click", myalert() {
             //Do something here
