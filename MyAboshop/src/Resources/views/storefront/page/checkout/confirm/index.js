@@ -1,3 +1,4 @@
+// Did not work. Apply new method
 import template from 'index.html.twig';
 flatpickr.defaultConfig
 {

@@ -1,3 +1,4 @@
+// Vue Datepicker did not work. Try new method.
 import template from './vue-datepicker.html.twig';
 
 Shopware.Component.register('vue-datepicker', {

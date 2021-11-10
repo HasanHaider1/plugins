@@ -1,3 +1,4 @@
+//Component did not work. Apply new approach
 const {Component}= Shopware;
 Component.override('sw-datepicker',{
     mounted() {
